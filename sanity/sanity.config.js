@@ -3,6 +3,7 @@ import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {IconManager} from 'sanity-plugin-icon-manager'
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input';
 
 export default defineConfig({
   name: 'default',
@@ -14,7 +15,10 @@ export default defineConfig({
   plugins: [
     structureTool(),
     visionTool(),
-    IconManager({
+    IconManager({}),
+    simplerColorInput({
+      defaultColorFormat: 'hex', 
+      enableSearch: true, 
     }),
   ],
 

@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 
 const Item = ({ item, cursorChangeHandler }) => {
+    let [open, setOpen] = useState(false);
+    let [height, setHeight] = useState(0);
+    let contentRef = useRef(null);
+
+    useEffect(() => {
+        if (contentRef.current) {
+            setHeight(contentRef.current.scrollHeight);
+        }
+    }, [open]);
+
+    let openHandler = () => {
+        setOpen(!open);
+    };
+
     return (
         <div className='mb-12' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
             <h4 className='text-lg lg:text-2xl mb-2 lg:mb-4'>
@@ -14,11 +29,25 @@ const Item = ({ item, cursorChangeHandler }) => {
                     {item.fromDate} / {item.toDate}
                 </p>
             </div>
-            <p className='text-base leading-relaxed'>
-                {item.description}
-            </p>
+            <div className={`overflow-hidden transition-all duration-1000`} style={{ height: open ? `${height}px` : '80px' }}>
+                <p ref={contentRef} className='text-base leading-relaxed'>
+                    {item.description}
+                </p>
+            </div>
+            <div className='flex justify-end items-end'>
+                {!open && (
+                    <div className='p-2 hover:scale-125 transition duration-300 text-xl font-bold bg-red_primary text-stone-900 rounded-full ' onClick={openHandler}>
+                        <SlArrowDown />
+                    </div>
+                )}
+                {open && (
+                    <div className='p-2 hover:scale-125 transition duration-300 text-xl font-bold bg-red_primary text-stone-900 rounded-full ' onClick={openHandler}>
+                        <SlArrowUp/>
+                    </div>
+                )}
+            </div>
         </div>
     );
-}
+};
 
 export default Item;

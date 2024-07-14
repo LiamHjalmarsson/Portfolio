@@ -3,13 +3,15 @@ import Heading from '../../components/heading/Heading';
 import Skill from './components/Skill';
 import useFetch from '../../hooks/useFetch';
 
-
 const Skills = () => {
     let { data } = useFetch(`*[_type == "skillType"]{
         _updatedAt,
         title,
         icon,
-        type
+        type,
+        backgroundColor{
+            value
+        }
     }`);
 
     let sortedSkills = data?.sort((a, b) => new Date(b._updatedAt) - new Date(a._updatedAt));

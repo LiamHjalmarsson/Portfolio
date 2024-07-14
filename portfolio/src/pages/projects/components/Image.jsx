@@ -1,13 +1,25 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { urlFor } from '../../../client';
 
 const ROTATION_RANGE = 20;
 
 const Image = ({ img }) => {
-    const ref = useRef(null);
+    let ref = useRef(null);
+    let [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    useEffect(() => {
+        let checkScreenSize = () => {
+            setIsLargeScreen(window.innerWidth >= 1024); 
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
     let handleMouseMove = (e) => {
-        if (!ref.current) return;
+        if (!isLargeScreen || !ref.current) return;
         
         let { left, top, width, height } = ref.current.getBoundingClientRect();
         
@@ -24,7 +36,7 @@ const Image = ({ img }) => {
     };
 
     let handleMouseLeave = () => {
-        if (ref.current) {
+        if (ref.current && isLargeScreen) {
             ref.current.style.transform = 'perspective(500px) rotateX(0deg) rotateY(0deg)';
         }
     };

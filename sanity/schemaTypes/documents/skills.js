@@ -1,4 +1,5 @@
 import { defineType, defineField } from "sanity";
+import { simplerColorInput } from 'sanity-plugin-simpler-color-input';
 
 export default defineType({
     name: 'skillType',
@@ -26,6 +27,17 @@ export default defineType({
                     { title: 'UI/UX', value: 'UI/UX' },
                     { title: 'Other', value: 'Other' },
                 ],
+            },
+        }),
+        defineField({
+            name: 'backgroundColor',
+            title: 'Background Color',
+            type: 'simplerColor',
+            options: {
+                colorList: [
+                    { label: 'Custom...', value: 'custom' },
+                ],
+                enableSearch: true,
             },
         }),
     ],
