@@ -16,7 +16,6 @@ const Item = ({ item, cursorChangeHandler }) => {
         setOpen(!open);
     };
 
-    console.log(item);
     return (
         <div className='mb-12' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
             <h4 className='text-lg lg:text-2xl mb-2 lg:mb-4'>
