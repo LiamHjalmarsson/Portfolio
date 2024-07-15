@@ -16,17 +16,18 @@ const Item = ({ item, cursorChangeHandler }) => {
         setOpen(!open);
     };
 
+    console.log(item);
     return (
         <div className='mb-12' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
             <h4 className='text-lg lg:text-2xl mb-2 lg:mb-4'>
-                {item.roll}
+                {item.positionOrDegree}
             </h4>
             <div className='mb-4 lg:mb-8 flex justify-between items-center'>
                 <h5 className='text-base lg:text-lg text-red_primary'>
-                    {item.company}
+                    {item.institutionOrCompany}
                 </h5>
                 <p className='text-xs pr-4'>
-                    {item.fromDate} / {item.toDate}
+                    {item.startDate} / {item.endDate}
                 </p>
             </div>
             <div className={`overflow-hidden transition-all duration-1000`} style={{ height: open ? `${height}px` : '80px' }}>
