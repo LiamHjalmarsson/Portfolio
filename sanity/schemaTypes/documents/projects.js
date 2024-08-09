@@ -1,10 +1,9 @@
-import { defineType, defineField } from "sanity";
+import { defineType, defineField } from 'sanity';
 
 export default defineType({
     name: 'projects',
     title: 'Projects',
     type: 'document',
-    description: 'Description',
     fields: [
         defineField({
             name: 'title',
@@ -39,14 +38,29 @@ export default defineType({
             ],
         }),
         defineField({
-            name: "github",
-            title: "Github",
-            type: "url"
+            name: 'github',
+            title: 'Github',
+            type: 'url',
         }),
         defineField({
-            name: "url",
-            title: "Url",
-            type: "url"
+            name: 'url',
+            title: 'Url',
+            type: 'url',
+        }),
+        defineField({
+            name: 'description',
+            title: 'Project Description',
+            type: 'blockContent', 
+        }),
+        defineField({
+            name: 'additionalImages',
+            title: 'Additional Images',
+            type: 'array',
+            of: [{ type: 'image' }],
+            options: {
+                hotspot: true,
+                metadata: ['lqip', 'palette', 'blurhash'],
+            },
         }),
     ],
 });

@@ -49,7 +49,7 @@ const Form = () => {
 
     return (
         <>
-            <form ref={formRef} onSubmit={sendEmail} className={`w-full lg:w-1/2 flex flex-col bg-stone-900 bg-opacity-70 p-2 sm:p-4 md:p-6 rounded-md duration-300 transition`}>
+            <form ref={formRef} onSubmit={sendEmail} className={`w-full lg:w-1/2 flex flex-col bg-stone-900 bg-opacity-70 p-4 md:p-6 rounded-md duration-300 transition`}>
                 <InputRow
                     input={{
                         id: "name",
@@ -76,7 +76,7 @@ const Form = () => {
                     error={error}
                 />
 
-                <div className='my-2 lg:my-4 w-full flex justify-end'>
+                <div className='my-2 lg:my-4 w-full flex justify-end pr-2'>
                     <button className='relative py-2 px-12 border-2 border-red_primary flex gap-6 items-center font-bold text-lg tracking-wider rounded-b-full rounded-r-full rounded-bl-full group hover:border-opacity-80 transition duration-300' onMouseEnter={() => cursorChangeHandler("button")} onMouseLeave={() => cursorChangeHandler("")}>
                         <p className='flex-grow pr-6 group-hover:text-red_primary transition duration-300 relative z-10'>
                             {loading && 'Sending...'}

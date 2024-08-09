@@ -13,11 +13,15 @@ const About = () => {
     let { cursorChangeHandler } = useContext(MouseContext);
 
     return (
-        <section className='min-h-screen flex flex-col justify-center items-center relative pb-12 pt-24' id='about'>
+        <section className='min-h-screen flex flex-col justify-center items-center relative pb-12 pt-24 lg:pt-40' id='about'>
             <div className='flex flex-wrap w-full gap-12 lg:gap-24 justify-center items-center max-lg:flex-grow'>
-                <div className="relative h-full">
-                    <img src={img} alt="Liam Hjalmarsson - Frontend Developer with Media Technology Background" className="h-full w-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-red_primary to-stone-800 opacity-60"></div>
+                <div className="h-full p-4">
+                    <div className='p-2 border border-red_primary border-opacity-60 rounded-full'>
+                        <div className='p-2 border border-red_primary border-opacity-80 rounded-full relative'>
+                            <img src={img} alt="Liam Hjalmarsson - Frontend Developer with Media Technology Background" className="lg:max-w-80 lg:max-h-80 max-h-64 h-full max-w-64 w-full object-cover rounded-full" />
+                            <div className="absolute m-2 inset-0 bg-gradient-to-r from-red_primary to-stone-800 opacity-60 rounded-full"></div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='w-full max-w-2xl text-center px-6 lg:px-12'>

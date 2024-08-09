@@ -6,7 +6,7 @@ const Heading = ({ heading, subHeading, backgroundText }) => {
 
     return (
         <div className='relative flex flex-col justify-center items-center uppercase px-6'>
-            <h2 className='text-lg sm:text-xl md:text-2xl lg:text-4xl z-10 text-red_primary font-semibold' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
+            <h2 className='text-lg text-center sm:text-xl md:text-2xl lg:text-4xl z-10 text-red_primary font-semibold' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
                 {subHeading}
             </h2>
             <h1 className='text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold tracking-widest text-center z-10 mt-4' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>

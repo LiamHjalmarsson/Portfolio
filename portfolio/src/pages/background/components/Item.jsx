@@ -17,7 +17,7 @@ const Item = ({ item, cursorChangeHandler }) => {
     };
 
     return (
-        <div className='mb-12' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
+        <div className='' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
             <h4 className='text-lg lg:text-2xl mb-2 lg:mb-4'>
                 {item.positionOrDegree}
             </h4>
@@ -34,7 +34,7 @@ const Item = ({ item, cursorChangeHandler }) => {
                     {item.description}
                 </p>
             </div>
-            <div className='flex justify-end items-end'>
+            <div className='flex justify-end items-end mt-2'>
                 {!open && (
                     <div className='p-2 hover:scale-125 transition duration-300 text-xl font-bold bg-red_primary text-stone-900 rounded-full ' onClick={openHandler}>
                         <SlArrowDown />

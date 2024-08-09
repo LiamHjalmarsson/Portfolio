@@ -48,7 +48,7 @@ const Cursor = () => {
 
     return (
         <>
-            <div
+            {/* <div
                 style={{ left: `${x}px`, top: `${y}px` }}
                 className={`hidden lg:flex fixed rounded-full transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-out z-[999] pointer-events-none`}
             >
@@ -62,7 +62,7 @@ const Cursor = () => {
                     style={{ animation: 'roll 3s infinite linear' }}
                 >
                 </div>
-            </div>
+            </div> */}
 
             <div
                 style={{ left: `${x}px`, top: `${y}px` }}

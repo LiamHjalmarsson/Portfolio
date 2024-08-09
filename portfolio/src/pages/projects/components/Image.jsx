@@ -43,7 +43,7 @@ const Image = ({ img }) => {
 
     return (
         <div
-            className="relative flex-grow w-full lg:max-w-[500px]"
+            className="relative flex-grow w-full"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             ref={ref}
@@ -54,7 +54,7 @@ const Image = ({ img }) => {
             }}
         >
             <img
-                className="w-full h-72 object-cover opacity-80 lg:hover:scale-125 transition duration-300 lg:hover:opacity-100"
+                className="w-full h-72 object-cover opacity-80 lg:hover:scale-110 transition duration-300 lg:hover:opacity-100 rounded-md"
                 src={urlFor(img).width(600).url()}
                 alt={img.alt}
             />

@@ -11,7 +11,7 @@ const Links = ({ open, openHandler }) => {
         <>
             <div className={`lg:flex hidden flex-grow justify-between items-center`}>
                 <div className='flex-grow flex justify-end items-center'>
-                    <ul className='flex w-fit items-center justify-center gap-12 bg-stone-800 rounded-full bg-opacity-70 px-12 py-6'>
+                    <ul className='flex w-fit items-center justify-center gap-12 rounded-full bg-opacity-70 px-12 py-6'>
                         {
                             links.map((link, index) => (
                                 <li key={index} onMouseEnter={() => cursorChangeHandler("link")} onMouseLeave={() => cursorChangeHandler("")} className='flex'> 
@@ -23,7 +23,7 @@ const Links = ({ open, openHandler }) => {
                 </div>
             </div>
 
-            <div className={`lg:hidden h-screen w-full left-0 fixed transition-all duration-0 ease-in ${open ? 'top-0  bg-opacity-60' : 'bg-opacity-0 top-[-100vh] delay-700'} bg-stone-900`} onClick={openHandler}>
+            <div className={`lg:hidden fixed inset-0 transition-all duration-500 bg-stone-900 ${open ? 'bg-opacity-60' : 'bg-opacity-0 pointer-events-none'}`} onClick={openHandler}>
                 <ul className={`h-full absolute flex-col flex justify-between py-32 bg-stone-800 transition-all duration-500 ${open ? 'w-1/2' : 'w-0 delay-75'}`}>
                     {
                         links.map((link, index) => (

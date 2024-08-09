@@ -17,6 +17,12 @@ export default defineType({
             title: 'Icon',
         }),
         defineField({
+            name: 'showSkill',
+            title: 'showSkill',
+            type: 'boolean',
+            initialValue: true,
+        }),
+        defineField({
             name: 'type',
             title: 'Type',
             type: 'string',
@@ -24,8 +30,7 @@ export default defineType({
                 list: [
                     { title: 'Frontend', value: 'Frontend' },
                     { title: 'Backend', value: 'Backend' },
-                    { title: 'UI/UX', value: 'UI/UX' },
-                    { title: 'Other', value: 'Other' },
+                    { title: 'UI/UX and other', value: 'UI/UX and other' },
                 ],
             },
         }),
@@ -44,6 +49,13 @@ export default defineType({
     preview: {
         select: {
             title: 'title',
-        }
+            icon: 'icon',
+        },
+        prepare({ title, icon }) {
+            return {
+                title,
+                media: icon,
+            };
+        },
     }
 });
