@@ -1,22 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
 const Link = ({ link, close }) => {
+    let [isActive, setIsActive] = useState(false);
+
     return (
         <ScrollLink
-            className='relative px-4 max-lg:pl-6 lg:px-6 2xl:px-12 py-4 w-full bg-stone-800 border border-red_primary max-lg:skew-x-6 hover:scale-110 lg:rounded-tr-full max-lg:border-l-0 lg:rounded-bl-full hover:bg-red_primary transition duration-300 hover:text-stone-900 font-bold shadow-red_primary uppercase tracking-wider text-sm'
+            className={`w-2/3 lg:w-fit relative lg:px-2 transition duration-300 text-center font-bold py-4 uppercase tracking-wider text-sm group hover:text-red_primary ${isActive ? 'text-red_primary' : 'text-stone-800 dark:text-stone-100'}`}
             to={link}
-            duration={500}
+            duration={300}
             smooth={true}
             onClick={close ? close : () => { }}
-            activeClass="active"
             spy={true}
             offset={0}
-            activeStyle={{ background: "#ff4b57", color: "#292524", boxShadow: "0px 0px 6px 2px #ff4b57" }}
+            activeStyle={{}}
+            onSetActive={() => setIsActive(true)}
+            onSetInactive={() => setIsActive(false)}
         >
-            <span className='relative z-10'>
-                {link}
-            </span>
+            <div
+                className={`absolute -top-0 left-0 w-full h-0.5 bg-red_primary transform transition-transform duration-300 ease-in-out 
+                    ${isActive ? 'scale-x-100' : 'scale-x-0'}`}
+                style={{ transformOrigin: 'left' }}
+            ></div>
+            {link}
+            <div
+                className={`absolute -bottom-0 left-0 w-full h-0.5 bg-red_primary transform transition-transform duration-300 ease-in-out 
+                    ${isActive ? 'scale-x-100' : 'scale-x-0'}`}
+                style={{ transformOrigin: 'left' }}
+            ></div>
         </ScrollLink>
     );
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import Header from '../components/layout/header/Header';
 import About from './about/About';
 import Background from './background/Background';
@@ -11,10 +10,9 @@ const Root = () => {
     return (
         <>
             <Cursor />
-
             <Header />
 
-            <main className='text-stone-100 bg-stone-800'>
+            <main className='text-stone-800 dark:text-stone-100 bg-stone-100 dark:bg-stone-800'>
                 <About />
                 <Skills />
                 <Projects />

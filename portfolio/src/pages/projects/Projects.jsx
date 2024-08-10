@@ -16,7 +16,7 @@ const Projects = () => {
     }`);
 
     return (
-        <section className='min-h-[100vh] flex flex-col gap-12 lg:gap-24 justify-center items-center py-12' id='projects'>
+        <section className='min-h-[100vh] flex flex-col gap-12 lg:gap-24 justify-center items-center py-32' id='projects'>
             <Heading heading="Portfolio" subHeading="My Projects" backgroundText="Projects" />
 
             {

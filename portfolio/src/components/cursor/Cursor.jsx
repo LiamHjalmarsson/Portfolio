@@ -6,25 +6,25 @@ const Cursor = () => {
     let { x, y } = useMousePosition();
     let { mouseHover, lastHover } = useContext(MouseContext);
 
-    let getCursorStyle = () => {
-        let borderStyle;
-        switch (lastHover) {
-            case 'text':
-                borderStyle = 'border-bluePrimary';
-                break;
-            case 'icon':
-                borderStyle = 'border-bluePrimary';
-                break;
-            case 'link':
-            case 'button':
-                borderStyle = 'border-red_primary';
-                break;
-            case 'card':
-            default:
-                borderStyle = 'border-red_primary';
-        }
-        return borderStyle;
-    };
+    // let getCursorStyle = () => {
+    //     let borderStyle;
+    //     switch (lastHover) {
+    //         case 'text':
+    //             borderStyle = 'border-bluePrimary';
+    //             break;
+    //         case 'icon':
+    //             borderStyle = 'border-bluePrimary';
+    //             break;
+    //         case 'link':
+    //         case 'button':
+    //             borderStyle = 'border-red_primary';
+    //             break;
+    //         case 'card':
+    //         default:
+    //             borderStyle = 'border-red_primary';
+    //     }
+    //     return borderStyle;
+    // };
 
     let getShadowStyle = () => {
         let shadowStyle;

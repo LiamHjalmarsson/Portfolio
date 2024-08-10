@@ -49,7 +49,7 @@ const Form = () => {
 
     return (
         <>
-            <form ref={formRef} onSubmit={sendEmail} className={`w-full lg:w-1/2 flex flex-col bg-stone-900 bg-opacity-70 p-4 md:p-6 rounded-md duration-300 transition`}>
+            <form ref={formRef} onSubmit={sendEmail} className={`w-full lg:w-1/2 flex flex-col bg-stone-200 dark:bg-stone-900 dark:bg-opacity-30 shadow-md bg-opacity-30 p-4 md:p-6 rounded-md duration-300 transition`}>
                 <InputRow
                     input={{
                         id: "name",

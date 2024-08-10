@@ -29,11 +29,11 @@ const Skills = () => {
     let skillCategories = categorizeSkills(sortedSkills || []);
 
     return (
-        <section className='min-h-screen flex flex-col justify-center items-center py-12 px-4 md:px-8 lg:px-12' id='skills'>
+        <section className='min-h-screen flex flex-col justify-center items-center py-32 px-4 md:px-8 lg:px-12' id='skills'>
             <Heading heading="My Skills" subHeading="Frontend, Backend, UI/UX & More" backgroundText="Skills" />
             <div className='w-full max-w-7xl mt-12 flex flex-col gap-12'>
                 {Object.entries(skillCategories).map(([category, skills]) => (
-                    skills.length > 0 && <SkillsByCategory category={category} skills={skills} />
+                    skills.length > 0 && <SkillsByCategory category={category} skills={skills} key={category} />
                 ))}
             </div>
         </section>

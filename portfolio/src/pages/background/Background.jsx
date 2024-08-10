@@ -12,13 +12,14 @@ const Background = () => {
         startDate,
         endDate,
         description,
+        descriptions,
     }`);
 
     let work = data?.filter(item => item.type === 'work');
     let education = data?.filter(item => item.type === 'education');
 
     return (
-        <section className='min-h-[100vh] flex justify-center items-center flex-col gap-12 lg:gap-24 py-12' id='background'>
+        <section className='min-h-[100vh] flex justify-center items-center flex-col gap-12 lg:gap-24 py-32' id='background'>
             <Heading heading="Education and Work" subHeading="My background" backgroundText="Background" />
 
             {

@@ -5,7 +5,7 @@ const blockContent = defineType({
     title: 'Block Content',
     type: 'array',
     of: [
-        { type: 'block' },
+        { type: 'block', },
         { type: 'image' },
     ]
 });

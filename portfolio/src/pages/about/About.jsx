@@ -19,7 +19,7 @@ const About = () => {
                     <div className='p-2 border border-red_primary border-opacity-60 rounded-full'>
                         <div className='p-2 border border-red_primary border-opacity-80 rounded-full relative'>
                             <img src={img} alt="Liam Hjalmarsson - Frontend Developer with Media Technology Background" className="lg:max-w-80 lg:max-h-80 max-h-64 h-full max-w-64 w-full object-cover rounded-full" />
-                            <div className="absolute m-2 inset-0 bg-gradient-to-r from-red_primary to-stone-800 opacity-60 rounded-full"></div>
+                            <div className="absolute m-2 inset-0 bg-gradient-to-r from-red_primary to-stone-200 dark:to-stone-800 opacity-60 rounded-full"></div>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@ const About = () => {
                 <div className='w-full max-w-2xl text-center px-6 lg:px-12'>
                     <Heading heading="I'm Liam Hjalmarsson" subHeading="About Me" backgroundText="about" />
                     <Type />
-                    <p className='text-sm lg:text-base text-stone-300 mt-4 leading-relaxed mb-12' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
+                    <p className='text-sm lg:text-base text-stone-800 dark:text-stone-100 mt-4 leading-relaxed mb-12' onMouseEnter={() => cursorChangeHandler("text")} onMouseLeave={() => cursorChangeHandler("")}>
                         I am a passionate <Mark>junior Frontend Developer</Mark> with a <Mark>Bachelor's degree in Media Technology</Mark>.
                         I have a big interest in UI/UX design, but my passion lies in Frontend development. Transforming ideas into user-friendly and visually appealing web designs.
                         My skill set includes <Mark>HTML, CSS, JavaScript, React, and more</Mark>.

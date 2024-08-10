@@ -42,5 +42,10 @@ export default defineType({
             title: 'Description*',
             type: 'text',
         }),
+        defineField({
+            name: 'descriptions',
+            title: 'Project Description',
+            type: 'blockContent', 
+        }),
     ],
 });
