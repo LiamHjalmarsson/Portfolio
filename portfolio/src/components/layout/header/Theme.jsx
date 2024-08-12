@@ -26,7 +26,7 @@ const Theme = () => {
     return (
         <button
             onClick={toggleTheme}
-            className={`relative w-20 h-10 rounded-full justify-between flex items-center cursor-pointer
+            className={`relative w-20 h-10 rounded-full justify-between flex items-center
                     ${isDarkMode ? 'bg-stone-900' : 'bg-stone-200'} transition-colors duration-300 bg-opacity-30 shadow-md`}
         >
             <div

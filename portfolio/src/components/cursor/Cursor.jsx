@@ -30,7 +30,7 @@ const Cursor = () => {
         let shadowStyle;
         switch (mouseHover || lastHover) {
             case 'text':
-                shadowStyle = 'opacity-70 shadow-bluePrimary';
+                shadowStyle = 'opacity-80 shadow-bluePrimary';
                 break;
             case 'icon':
                 shadowStyle = 'shadow-bluePrimary';

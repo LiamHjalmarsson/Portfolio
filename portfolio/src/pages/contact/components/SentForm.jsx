@@ -4,13 +4,13 @@ const SentForm = ({ sent, setSent }) => {
     return (
         <div className={`fixed inset-0 flex items-center justify-center p-4 transition-all duration-300 ${sent ? 'z-10 opacity-100' : '-z-20 opacity-0'}`}>
             <div
-                className={`absolute inset-0 bg-stone-900 transition-opacity duration-300 ${sent ? 'opacity-50' : 'opacity-0'}`}
+                className={`absolute inset-0 bg-stone-100 dark:bg-stone-900 transition-opacity duration-300 ${sent ? 'opacity-50' : 'opacity-0'}`}
                 onClick={() => setSent(false)}
             ></div>
 
-            <div className={`bg-red-primary bg-stone-800 w-full max-w-xl py-8 px-4 lg:px-16 rounded-lg shadow-lg transform transition-all duration-300 ${sent ? 'translate-y-0 opacity-100 delay-300' : 'translate-y-8 opacity-0'}`}>
+            <div className={`bg-red-primary bg-stone-200 dark:bg-stone-800 w-full max-w-xl py-8 px-4 lg:px-16 rounded-lg shadow-lg transform transition-all duration-300 ${sent ? 'translate-y-0 opacity-100 delay-300' : 'translate-y-8 opacity-0'}`}>
                 <button 
-                    className="absolute top-2 right-4 text-3xl font-bold text-gray-200 hover:text-gray-100 transition-colors duration-200"
+                    className="absolute top-2 right-4 text-3xl font-bold text-red_primary hover:bg-opacity-90 transition-colors duration-200"
                     onClick={() => setSent(false)}
                 >
                     &times;
