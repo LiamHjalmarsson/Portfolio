@@ -13,7 +13,7 @@ export default defineConfig({
   projectId: 'bqbhhten',
   dataset: 'production',
   useCdn: true,
-  apiVersion: "2022-02-03",
+  apiVersion: "2021-08-31",
 
   plugins: [
     structureTool(),
