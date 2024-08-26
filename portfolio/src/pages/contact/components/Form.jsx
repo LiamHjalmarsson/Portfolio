@@ -3,7 +3,6 @@ import InputRow from './InputRow';
 import { FaPaperPlane } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
 import { MouseContext } from '../../../context/mouseContext';
-import SentForm from './SentForm';
 
 const Form = () => {
     let { setCursorType } = useContext(MouseContext);
@@ -49,52 +48,52 @@ const Form = () => {
 
     return (
         <>
-            <form ref={formRef} onSubmit={sendEmail} className={`w-full lg:w-1/2 flex flex-col bg-stone-200 dark:bg-stone-900 dark:bg-opacity-30 shadow-md bg-opacity-30 p-4 md:p-6 rounded-md duration-300 transition`}>
+            <form
+                ref={formRef}
+                onSubmit={sendEmail}
+                className={`w-full lg:w-1/2 flex flex-col bg-stone-200 dark:bg-stone-900 dark:bg-opacity-30 shadow-md bg-opacity-30 p-4 md:p-6 rounded-md duration-300 transition`}
+            >
+
                 <InputRow
-                    input={{
-                        id: "name",
-                        name: "name",
-                        type: "text",
-                    }}
+                    id="name"
+                    type="text"
+                    name="name"
+                    label="Name"
                     error={error}
                 />
                 <InputRow
-                    input={{
-                        id: "email",
-                        name: "email",
-                        type: "email",
-                    }}
+                    id="email"
+                    type="email"
+                    name="email"
+                    label="Email"
                     error={error}
                 />
                 <InputRow
-                    input={{
-                        id: "message",
-                        name: "message",
-                        type: "text",
-                    }}
+                    id="message"
+                    type="text"
+                    name="message"
                     msg={true}
+                    label="Message"
                     error={error}
                 />
 
                 <div className='my-2 lg:my-4 w-full flex justify-end pr-2'>
-                    <button 
-                        className='relative py-2 px-12 border-2 border-red_primary flex gap-6 items-center font-bold text-lg tracking-wider rounded-b-full rounded-r-full rounded-bl-full group hover:border-opacity-80 transition duration-300' 
-                        onMouseEnter={() => setCursorType("button")} 
+                    <button
+                        className={`relative py-2 px-12 border-2 flex gap-6 items-center font-bold text-lg tracking-wider rounded-b-full rounded-r-full rounded-bl-full group hover:border-opacity-80 transition duration-300 ${sent ? "border-green-400 bg-green-400" : "border-red_primary"}`}
+                        onMouseEnter={() => setCursorType("button")}
                         onMouseLeave={() => setCursorType("")}
                     >
-                        <span className='flex-grow pr-6 group-hover:text-red_primary lg:transition duration-300 relative z-10'>
+                        <span className={`flex-grow pr-6 ${sent ? "" : "group-hover:text-red_primary"} lg:transition duration-300 relative z-10`}>
                             {loading && 'Sending...'}
                             {sent && 'Sent message'}
                             {!loading && !sent && 'Send message'}
                         </span>
-                        <span className={`absolute right-0 bg-red_primary mr-0.5 ml-0.5 p-3 rounded-full group-hover:bg-opacity-80 transition duration-500 `}>
+                        <span className={`absolute right-0 mr-0.5 ml-0.5 p-3 rounded-full group-hover:bg-opacity-80 transition duration-500 ${sent ? "border-green-600 bg-green-600" : "bg-red_primary"}`}>
                             <FaPaperPlane />
                         </span>
                     </button>
                 </div>
             </form >
-
-            <SentForm sent={sent} setSent={setSent} />
         </>
     );
 }
