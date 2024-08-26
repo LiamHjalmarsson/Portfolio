@@ -1,5 +1,5 @@
 import React from 'react';
-import Heading from '../../components/heading/Heading';
+import SectionHeading from '../../components/heading/Heading';
 import useFetch from '../../hooks/useFetch';
 import SkillsByCategory from './components/SkillsCategory';
 
@@ -30,10 +30,14 @@ const Skills = () => {
 
     return (
         <section className='min-h-screen flex flex-col justify-center items-center py-32 px-4 md:px-8 lg:px-12' id='skills'>
-            <Heading heading="My Skills" subHeading="Frontend, Backend, UI/UX & More" backgroundText="Skills" />
+            <SectionHeading 
+                title="My Skills" 
+                subtitle="Frontend, Backend, UI/UX & More" 
+                backgroundTitle="Skills" 
+            />
             <div className='w-full max-w-7xl mt-12 flex flex-col gap-12'>
                 {Object.entries(skillCategories).map(([category, skills]) => (
-                    skills.length > 0 && <SkillsByCategory category={category} skills={skills} key={category} />
+                    <SkillsByCategory category={category} skills={skills} key={category} />
                 ))}
             </div>
         </section>

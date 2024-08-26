@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import Logo from '../../logo/Logo';
+import Logo from '../logo/Logo';
 import Links from './Links';
-import Burger from './Burger';
+import BurgerMenu from './BurgerMenu';
 import Theme from './Theme';
 
 const Header = () => {
-    let [open, setOpen] = useState(false);
+    let [isOpen, setIsOpen] = useState(false);
 
-    let burgerMenu = () => {
-        setOpen(!open);
+    let burgerMenuHandler = () => {
+        setIsOpen(prevState => !prevState);
     };
 
     return (
@@ -16,11 +16,17 @@ const Header = () => {
             <nav className='bg-transparent px-6 2xl:px-12 gap-12 flex justify-between items-center'>
                 <Logo />
 
-                <Links open={open} openHandler={burgerMenu} />
+                <Links 
+                    isMenuOpen={isOpen} 
+                    closeMenu={burgerMenuHandler} 
+                />
 
                 <div className='flex gap-4 items-center'>
                     <Theme />
-                    <Burger open={open} menuHandler={burgerMenu} />
+                    <BurgerMenu 
+                        isMenuOpen={isOpen} 
+                        toggleMenu={burgerMenuHandler} 
+                    />
                 </div>
             </nav>
         </header>

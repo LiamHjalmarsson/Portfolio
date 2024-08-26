@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Skills = ({ skills }) => {
+const ProjectSkills = ({ skills }) => {
     return (
         <ul className='flex flex-wrap justify-start gap-2 mt-4'>
             {skills.map((skill, index) => (
@@ -12,4 +12,4 @@ const Skills = ({ skills }) => {
     );
 }
 
-export default Skills;
+export default ProjectSkills;

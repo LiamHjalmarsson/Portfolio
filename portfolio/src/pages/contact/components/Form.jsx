@@ -6,7 +6,7 @@ import { MouseContext } from '../../../context/mouseContext';
 import SentForm from './SentForm';
 
 const Form = () => {
-    let { cursorChangeHandler } = useContext(MouseContext);
+    let { setCursorType } = useContext(MouseContext);
 
     let formRef = useRef();
     let [loading, setLoading] = useState();
@@ -77,15 +77,19 @@ const Form = () => {
                 />
 
                 <div className='my-2 lg:my-4 w-full flex justify-end pr-2'>
-                    <button className='relative py-2 px-12 border-2 border-red_primary flex gap-6 items-center font-bold text-lg tracking-wider rounded-b-full rounded-r-full rounded-bl-full group hover:border-opacity-80 transition duration-300' onMouseEnter={() => cursorChangeHandler("button")} onMouseLeave={() => cursorChangeHandler("")}>
-                        <p className='flex-grow pr-6 group-hover:text-red_primary transition duration-300 relative z-10'>
+                    <button 
+                        className='relative py-2 px-12 border-2 border-red_primary flex gap-6 items-center font-bold text-lg tracking-wider rounded-b-full rounded-r-full rounded-bl-full group hover:border-opacity-80 transition duration-300' 
+                        onMouseEnter={() => setCursorType("button")} 
+                        onMouseLeave={() => setCursorType("")}
+                    >
+                        <span className='flex-grow pr-6 group-hover:text-red_primary lg:transition duration-300 relative z-10'>
                             {loading && 'Sending...'}
                             {sent && 'Sent message'}
                             {!loading && !sent && 'Send message'}
-                        </p>
-                        <div className={`absolute right-0 bg-red_primary mr-0.5 ml-0.5 p-3 rounded-full group-hover:bg-opacity-80 transition duration-500 `}>
+                        </span>
+                        <span className={`absolute right-0 bg-red_primary mr-0.5 ml-0.5 p-3 rounded-full group-hover:bg-opacity-80 transition duration-500 `}>
                             <FaPaperPlane />
-                        </div>
+                        </span>
                     </button>
                 </div>
             </form >

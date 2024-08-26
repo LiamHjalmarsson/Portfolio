@@ -6,7 +6,7 @@
     cursor: none;
 }
 
-@keyframes roll {
+/* @keyframes roll {
     0% {
         transform: rotate(0deg);
     }
@@ -17,4 +17,4 @@
 
 .animate-roll {
     animation: roll 3s infinite linear;
-}
+} */

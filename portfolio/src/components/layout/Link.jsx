@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
-const Link = ({ link, close }) => {
+const Link = ({ link, closeMenu }) => {
     let [isActive, setIsActive] = useState(false);
 
     return (
@@ -10,7 +10,7 @@ const Link = ({ link, close }) => {
             to={link}
             duration={300}
             smooth={true}
-            onClick={close ? close : () => { }}
+            onClick={closeMenu ? closeMenu : () => { }}
             spy={true}
             offset={0}
             activeStyle={{}}
@@ -22,7 +22,7 @@ const Link = ({ link, close }) => {
                     ${isActive ? 'scale-x-100' : 'scale-x-0'}`}
                 style={{ transformOrigin: 'left' }}
             ></div>
-            {link}
+                {link}
             <div
                 className={`absolute -bottom-0 left-0 w-full h-0.5 bg-red_primary transform transition-transform duration-300 ease-in-out 
                     ${isActive ? 'scale-x-100' : 'scale-x-0'}`}

@@ -1,7 +1,7 @@
 import React from 'react';
-import Heading from '../../components/heading/Heading';
-import Items from './components/items';
+import SectionHeading from '../../components/heading/Heading';
 import useFetch from '../../hooks/useFetch';
+import Project from './components/Project';
 
 const Projects = () => {
     let { data } = useFetch(`*[_type == "projects"]{
@@ -17,11 +17,19 @@ const Projects = () => {
 
     return (
         <section className='min-h-[100vh] flex flex-col gap-12 lg:gap-24 justify-center items-center py-32' id='projects'>
-            <Heading heading="Portfolio" subHeading="My Projects" backgroundText="Projects" />
+            <SectionHeading
+                title="Portfolio"
+                subtitle="My Projects"
+                backgroundTitle="Projects"
+            />
 
-            {
-                data && <Items items={data} />
-            }
+            <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-full relative max-w-7xl gap-12 px-6 md:px-8 lg:px-12">
+                {
+                    data && data.map((item, index) => (
+                        <Project key={index} item={item} />
+                    ))
+                }
+            </div>
         </section>
     );
 }

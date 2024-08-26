@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { urlFor } from '../../../client';
 
-const ROTATION_RANGE = 20;
+const ROTATION_LIMIT = 20;
 
-const Image = ({ img }) => {
-    let ref = useRef(null);
+const ProjectImage = ({ img }) => {
+    let imageRef = useRef(null);
     let [isLargeScreen, setIsLargeScreen] = useState(false);
 
     useEffect(() => {
         let checkScreenSize = () => {
-            setIsLargeScreen(window.innerWidth >= 1024); 
+            setIsLargeScreen(window.innerWidth >= 1024);
         };
 
         checkScreenSize();
@@ -19,26 +19,23 @@ const Image = ({ img }) => {
     }, []);
 
     let handleMouseMove = (e) => {
-        if (!isLargeScreen || !ref.current) return;
-        
-        let { left, top, width, height } = ref.current.getBoundingClientRect();
-        
-        let centerX = width / 2;
-        let centerY = height / 2;
-    
+        if (!isLargeScreen || !imageRef.current) return;
+
+        let { left, top, width, height } = imageRef.current.getBoundingClientRect();
+
         let mouseX = e.clientX - left;
         let mouseY = e.clientY - top;
-    
-        let rY = ((mouseX - centerX) / width) * ROTATION_RANGE;
-        let rX = -((mouseY - centerY) / height) * ROTATION_RANGE;
-    
-        ref.current.style.transform = `perspective(600px) rotateX(${rX}deg) rotateY(${rY}deg)`;
+
+        let rotateY = ((mouseX - width / 2) / width) * ROTATION_LIMIT;
+        let rotateX = -((mouseY - height / 2) / height) * ROTATION_LIMIT;
+
+        imageRef.current.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     };
 
     let handleMouseLeave = () => {
-        if (ref.current && isLargeScreen) {
-            ref.current.style.transform = 'rotateX(0deg) rotateY(0deg)';
-        } 
+        if (imageRef.current && isLargeScreen) {
+            imageRef.current.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        }
     };
 
     return (
@@ -46,7 +43,7 @@ const Image = ({ img }) => {
             className="relative flex-grow w-full"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            ref={ref}
+            ref={imageRef}
             style={{
                 perspective: '600px',
                 transformStyle: 'preserve-3d',
@@ -54,7 +51,7 @@ const Image = ({ img }) => {
             }}
         >
             <img
-                className="w-full h-72 object-cover opacity-80 shadow lg:hover:scale-110 transition duration-300 lg:hover:opacity-100 rounded-md"
+                className="w-full h-72 object-cover opacity-80 shadow duration-300 lg:hover:scale-105 transition-all lg:hover:opacity-100"
                 src={urlFor(img).width(600).url()}
                 alt={img.alt}
             />
@@ -62,4 +59,4 @@ const Image = ({ img }) => {
     );
 };
 
-export default Image;
+export default ProjectImage;

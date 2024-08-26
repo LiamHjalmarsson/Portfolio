@@ -1,11 +1,11 @@
 import React from 'react';
 import { useTypewriter } from "react-simple-typewriter";
 
-const Type = () => {
+const TypeWriter = () => {
     let [typeEffect] = useTypewriter(
         {
-            words: ["Frontend Development", "Web Development", "Web Design", "Fullstack Development", "Backend Development"],
-            loop: {},
+            words: ["Frontend", "Web Design", "Fullstack", "Backend"],
+            loop: true,
             typeSpeed: 70,
             deleteSpeed: 20,
         }
@@ -20,4 +20,4 @@ const Type = () => {
     );
 }
 
-export default Type;
+export default TypeWriter;

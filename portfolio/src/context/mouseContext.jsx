@@ -1,33 +1,45 @@
 import React, { createContext, useEffect, useState } from "react";
 
 export const MouseContext = createContext({
-    cursorType: false,
-    cursorChangeHandler: () => { },
+    cursorType: "",
+    setCursorType: () => { },
+    position: {
+        x: null,
+        y: null
+    }
 });
 
-const MouseContextProvider = (props) => {
-    let [mouseHover, setMouseHover] = useState("");
-    let [lastHover, setLastHover] = useState("");
+const MouseContextProvider = ({ children }) => {
+    let [cursorType, setCursorType] = useState("");
+    let [position, setPosition] = useState({
+        x: null,
+        y: null
+    });
 
-    let cursorChangeHandler = (type) => {
-        setMouseHover(type);
-    };
-    
+    // Track the mouse cursor position
     useEffect(() => {
-        if (mouseHover) {
-            setLastHover(mouseHover);
-        }
-    }, [mouseHover]);
+        let handleMouseMove = (event) => {
+            setPosition({
+                x: event.clientX,
+                y: event.clientY,
+            });
+        };
+
+        document.addEventListener("mousemove", handleMouseMove);
+
+        return () => document.removeEventListener("mousemove", handleMouseMove);
+
+    }, []);
 
     return (
         <MouseContext.Provider
             value={{
-                mouseHover,
-                lastHover,
-                cursorChangeHandler
+                cursorType,
+                setCursorType,
+                position
             }}
         >
-            {props.children}
+            {children}
         </MouseContext.Provider>
     );
 };

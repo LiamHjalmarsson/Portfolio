@@ -1,4 +1,4 @@
-import Header from '../components/layout/header/Header';
+import Header from '../components/layout/Header';
 import About from './about/About';
 import Background from './background/Background';
 import Skills from './skills/Skills';

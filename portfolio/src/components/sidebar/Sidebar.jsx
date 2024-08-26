@@ -1,10 +1,10 @@
 import React from 'react';
-import Icons from './Icons';
+import SocialIcons from './SocialIcons';
 
 const Sidebar = () => {
     return (
         <div className='absolute max-xl:bottom-0 max-xl:right-0 xl:left-0'>
-            <Icons />
+            <SocialIcons />
         </div>
     );
 }
