@@ -24,9 +24,9 @@
                         <div
                             class="lg:border-b px-3 md:px-12 py-6 md:py-12 lg:py-20 relative max-lg:flex max-md:flex-col max-md:space-y-3 max-md:space-x-0 max-lg:space-x-6 max-lg:overflow-hidden">
                             <div class="flex max-md:flex-col justify-between items-center relative z-10">
-                                <h2 class="text-4xl font-semibold md:text-5xl lg:text-6xl 2xl:text-7xl group-hover:text-primary duration-300 transition">
+                                <Heading tag="h3" class="group-hover:text-primary duration-300 transition">
                                     {{ project.title }}
-                                </h2>
+                                </Heading>
 
                                 <div
                                     class="flex max-lg:space-y-3 max-md:flex-row max-lg:flex-col lg:space-x-6 max-md:space-x-6">

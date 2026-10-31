@@ -36,9 +36,9 @@
 
             <div class="relative flex flex-col gap-8 p-5 font-light md:p-8 lg:gap-12 lg:p-12">
                 <div class="flex justify-between gap-5 max-sm:flex-col sm:items-center">
-                    <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl text-white">
+                    <Heading tag="h3" class="text-2xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl text-white">
                         {{ background.title }}
-                    </h2>
+                    </Heading>
 
                     <p class="flex items-center gap-2 text-sm font-medium tracking-widest text-white uppercase md:text-right md:text-base">
                         <Icon
@@ -74,9 +74,9 @@
                                     />
                                 </span>
 
-                                <h3 class="text-lg font-semibold tracking-wide text-neutral-200 md:text-xl">
+                                <Heading tag="h4" class="text-neutral-200 ">
                                     {{ area.title }}
-                                </h3>
+                                </Heading>
                             </div>
 
                             <div class="flex flex-wrap gap-2">

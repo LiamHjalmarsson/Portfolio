@@ -79,6 +79,7 @@
         </div>
 
         <Header
+            is-first-header
             title="Liam Hjalmarsson"
             subtitle="~/utvecklare-skåne"
             theme="dark"

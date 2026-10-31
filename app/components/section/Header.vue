@@ -3,7 +3,7 @@
         <div :style="{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }">
             <div
                 ref="titleRef"
-                class="flex flex-col justify-center gap-3 md:gap-6 pb-6 pt-12 lg:pt-24 lg:gap-12 px-3 md:px-6 lg:px-12"
+                class="flex flex-col justify-center gap-3 md:gap-6 pb-6 pt-12 lg:pt-24 lg:gap-12 px-3 md:px-6 lg:px-12 max-w-300"
             >
 
                 <p
@@ -14,7 +14,7 @@
                 </p>
 
                 <Heading
-                    class="flex flex-col flex-wrap gap-12 sm:gap-16 md:block uppercase text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold tracking-wider max-w-350"
+                    :tag="isFirstHeader ? 'h1' : 'h2'"
                     :class="theme === 'dark' ? 'text-black' : 'text-white'"
                 >
                     {{ title }}
@@ -47,6 +47,7 @@ const {
     title: string
     theme: HeaderTheme
     withScrollTrigger: boolean
+    isFirstHeader?: boolean
 }>()
 
 const slots = useSlots()

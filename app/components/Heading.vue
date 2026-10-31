@@ -1,12 +1,9 @@
 <template>
     <component
-        :is="headingTag"
+        :is="tag"
         :class="tagClass"
-        class="font-semibold capitalize"
     >
-        <slot>
-            {{ title }}
-        </slot>
+        <slot/>
     </component>
 </template>
 
@@ -14,25 +11,21 @@
 import { computed } from 'vue'
 
 interface Heading {
-    title?: string;
     tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-    isFirstHeading?: boolean;
 }
 
-const props = defineProps<Heading>()
-
-const headingTag = computed(() => (props.isFirstHeading ? 'h1' : props.tag))
+const { tag } = defineProps<Heading>()
 
 const tagClass = computed(() => {
-    switch (headingTag.value) {
+    switch (tag) {
         case 'h1':
-            return 'text-4xl'
+            return 'uppercase text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold tracking-wider'
         case 'h2':
-            return 'text-2xl'
+            return 'text-3xl font-semibold md:text-5xl lg:text-7xl 2xl:text-8xl'
         case 'h3':
-            return 'text-base'
+            return 'text-2xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl'
         case 'h4':
-            return 'text-base'
+            return 'text-lg font-semibold tracking-wide md:text-xl'
         case 'h5':
         case 'h6':
         default:
