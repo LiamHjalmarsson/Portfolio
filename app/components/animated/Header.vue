@@ -14,7 +14,7 @@
                 </p>
 
                 <h1
-                    class="flex flex-col flex-wrap gap-12 sm:gap-16 md:block uppercase text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold tracking-wider"
+                    class="flex flex-col flex-wrap gap-12 sm:gap-16 md:block uppercase text-4xl sm:text-5xl md:text-6xl lg:text-8xl 2xl:text-9xl font-bold tracking-wider max-w-350"
                     :class="theme === 'dark' ? 'text-black' : 'text-white'"
                 >
                     {{ title }}

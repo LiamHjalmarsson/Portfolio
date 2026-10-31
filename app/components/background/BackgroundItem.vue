@@ -53,7 +53,7 @@
                     </p>
                 </div>
 
-                <p class="text-md text-pretty leading-relaxed tracking-widest text-neutral-200 md:text-lg lg:text-xl 2xl:text-2xl">
+                <p class="text-md text-pretty leading-relaxed tracking-widest text-neutral-200 md:text-lg lg:text-2xl 2xl:text-3xl">
                     {{ background.description }}
                 </p>
 

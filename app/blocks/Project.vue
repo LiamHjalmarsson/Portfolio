@@ -29,10 +29,12 @@
                                 </h2>
 
                                 <div
-                                    class="flex max-lg:space-y-3 max-md:flex-row max-lg:flex-col lg:space-x-6 max-md:space-x-6 text-md md:text-lg lg:text-xl font-semibold">
+                                    class="flex max-lg:space-y-3 max-md:flex-row max-lg:flex-col lg:space-x-6 max-md:space-x-6">
                                     <p
                                         v-for="tech in project.technologies"
-                                        :key="tech">
+                                        :key="tech"
+                                        class="uppercase"
+                                    >
                                         {{ tech }}
                                     </p>
                                 </div>

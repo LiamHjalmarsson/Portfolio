@@ -15,13 +15,7 @@
                     />
                 </Header>
 
-
-            <p class="px-3 md:px-6 lg:px-12 font-mono text-xs text-neutral-300 md:text-sm pb-6">
-                <span class="text-primary-500">$</span>
-                git log --karriär
-            </p>
-
-            <div ref="stackRef">
+            <div ref="stackRef" class="max-w-[1800px] mx-auto">
                 <BackgroundItem
                     v-for="(background, index) in data"
                     :key="`${background.id}-${index}`"

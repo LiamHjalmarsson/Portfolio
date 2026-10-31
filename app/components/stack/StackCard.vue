@@ -1,12 +1,3 @@
-
-<script setup lang="ts">
-import type { Collections } from '@nuxt/content'
-
-defineProps<{
-    stack: Collections['technologies']
-}>()
-</script>
-
 <template>
 	<div
 		class="group flex items-center justify-center border-r border-b border-black/5 hover:bg-black transition duration-300 relative"
@@ -21,8 +12,16 @@ defineProps<{
 			<Icon  v-if="stack.icon" :name="stack.icon" :size=" stack.size === 'large' ?  90 : 75" />
 		</span>
 
-        <span class=" absolute bottom-0 left-0 px-6 py-4 text-black font-semibold text-sm group-hover:text-primary transition duration-300">
+        <span class="absolute bottom-0 left-0 px-6 py-4 text-neutral-800 font-semibold text-sm group-hover:text-primary transition duration-300">
             {{ stack.title }}
         </span>
 	</div>
 </template>
+
+<script setup lang="ts">
+import type { Collections } from '@nuxt/content'
+
+defineProps<{
+    stack: Collections['technologies']
+}>()
+</script>

@@ -13,10 +13,10 @@
             </Header>
 
             <div
-                class="flex max-md:flex-col-reverse md:items-center justify-between max-md:space-y-reverse max-md:mt-6 max-md:space-y-12 md:space-x-16 px-3 md:px-6 lg:px-12 pb-16">
+                class="flex max-md:flex-col-reverse md:items-center justify-between max-md:space-y-reverse max-md:mt-6 mt-12 max-md:space-y-12 md:space-x-16 px-3 md:px-6 lg:px-12 pb-16">
                 <TextLines :text="aboutSecondaryText" class="text-neutral-200" />
 
-                <div ref="imageRef" class="flex-1 h-140 relative overflow-hidden min-w-80">
+                <div ref="imageRef" class="flex-1 h-140 relative overflow-hidden min-w-80 max-w-200">
                     <NuxtImg
                         src="/images/me.png"
                         format="webp"

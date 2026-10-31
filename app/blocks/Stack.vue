@@ -1,4 +1,3 @@
-
 <template>
     <section
         id="tech"
@@ -8,7 +7,7 @@
             <div ref="containerRef" class="max-w-480">
                 <p
                     ref="textRef"
-                    class="text-center text-lg leading-relaxed tracking-wide text-black/80 text-pretty md:text-2xl lg:text-3xl 2xl:text-5xl"
+                    class="text-center text-lg leading-relaxed tracking-wide text-neutral-800 text-pretty md:text-2xl lg:text-3xl 2xl:text-5xl"
                 >
                     {{ text }}
                 </p>
