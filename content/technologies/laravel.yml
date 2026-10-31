@@ -2,5 +2,5 @@ title: Laravel
 category: backend
 icon: mdi:laravel
 order: 2
-size: large
+size: lg
 featured: true

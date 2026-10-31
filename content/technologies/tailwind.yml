@@ -2,5 +2,5 @@ title: Tailwind CSS
 category: frontend
 icon: mdi:tailwind
 order: 6
-size: small
+size: sm
 featured: true

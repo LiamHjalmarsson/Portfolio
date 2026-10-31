@@ -38,7 +38,7 @@ export default defineContentConfig({
                 ]),
                 order: z.number().default(0),
                 icon: z.string().optional(),
-                size: z.enum(['small', 'large']).default('small'),
+                size: z.enum(['sm', 'lg']).default('sm'),
                 featured: z.boolean().default(false),
             }),
         }),

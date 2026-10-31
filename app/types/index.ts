@@ -11,7 +11,7 @@ export interface Link {
 	sectionId: string;
 };
 
-export type Size = 'large' | 'small';
+export type Size = 'lg' | 'sm';
 
 export type ButtonVariant = 'primary' | 'outline' | 'ghost'
 

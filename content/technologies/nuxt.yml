@@ -2,5 +2,5 @@ title: Nuxt
 category: frontend
 icon: mdi:nuxt
 order: 4
-size: small
+size: sm
 featured: true

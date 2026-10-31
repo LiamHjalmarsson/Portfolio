@@ -47,8 +47,8 @@ const orderedItems = computed(() => {
     const items = technologies.value ?? []
 
     return [
-        ...items.filter(item => item.size === 'large'),
-        ...items.filter(item => item.size === 'small'),
+        ...items.filter(item => item.size === 'lg'),
+        ...items.filter(item => item.size === 'sm'),
     ]
 })
 

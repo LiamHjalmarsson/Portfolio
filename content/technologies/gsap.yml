@@ -2,5 +2,5 @@ title: GSAP
 category: frontend
 icon: simple-icons:gsap
 order: 5
-size: small
+size: sm
 featured: true

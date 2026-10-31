@@ -2,5 +2,5 @@ title: Node.js
 category: backend
 icon: mdi:nodejs
 order: 8
-size: small
+size: sm
 featured: true

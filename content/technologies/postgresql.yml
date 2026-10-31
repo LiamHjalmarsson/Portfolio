@@ -2,5 +2,5 @@ title: PostgreSQL
 category: database
 icon: akar-icons:postgresql-fill
 order: 7
-size: small
+size: sm
 featured: true

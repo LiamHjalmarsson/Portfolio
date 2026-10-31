@@ -2,5 +2,5 @@ title: React
 category: frontend
 icon: mdi:react
 order: 9
-size: small
+size: sm
 featured: true

@@ -2,5 +2,5 @@ title: Vue
 category: frontend
 icon: mdi:vuejs
 order: 1
-size: large
+size: lg
 featured: true
