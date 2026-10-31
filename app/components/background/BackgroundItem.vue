@@ -53,7 +53,7 @@
                     </p>
                 </div>
 
-                <p class="text-md text-pretty leading-relaxed tracking-widest text-neutral-200 md:text-lg lg:text-2xl 2xl:text-3xl">
+                <p class="text-base text-pretty leading-relaxed tracking-widest text-neutral-200 md:text-lg lg:text-2xl 2xl:text-3xl">
                     {{ background.description }}
                 </p>
 
@@ -113,7 +113,6 @@ gsap.registerPlugin(ScrollTrigger)
 defineProps<{
     background: Collections['background']
     index: number
-    total: number
 }>()
 
 const listRef = ref<HTMLUListElement | null>(null)

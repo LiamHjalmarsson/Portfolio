@@ -7,7 +7,7 @@
         <ul class="flex flex-col space-y-4 overflow-hidden">
             <li
                 v-for="link in links"
-                :key="link.to"
+                :key="link.sectionId"
                 ref="linkRefs"
             >
                 <button
@@ -48,7 +48,7 @@
                         :key="social.name"
                         :to="social.href"
                         target="_blank"
-                        :aria-label="`Besök ${social.name}`"
+                        :aria-label="`Gå till sektion ${social.name}`"
                         class="text-xs lg:text-sm leading-loose tracking-widest uppercase transition-colors duration-300 hover:text-white"
                     >
                         {{ social.name }}

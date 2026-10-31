@@ -1,32 +1,26 @@
 export const links: Link[] = [
-	{
-		name: "Hem",
-		to: "/",
-		sectionId: "home",
-	},
-	{
-		name: "Tech",
-		to: "/",
-		sectionId: "tech",
-	},
-	{
-		name: "Bakgrund",
-		to: "/background",
-		sectionId: "background",
-	},
-	{
-		name: "Om mig",
-		to: "/about",
-		sectionId: "about",
-	},
-	{
-		name: "Projekt",
-		to: "/service",
-		sectionId: "projects",
-	},
-	{
-		name: "Kontakt",
-		to: "/contact",
-		sectionId: "contact",
-	},
-];
+    {
+        name: 'Hem',
+        sectionId: 'home',
+    },
+    {
+        name: 'Tech',
+        sectionId: 'tech',
+    },
+    {
+        name: 'Bakgrund',
+        sectionId: 'background',
+    },
+    {
+        name: 'Om mig',
+        sectionId: 'about',
+    },
+    {
+        name: 'Projekt',
+        sectionId: 'projects',
+    },
+    {
+        name: 'Kontakt',
+        sectionId: 'contact',
+    },
+]

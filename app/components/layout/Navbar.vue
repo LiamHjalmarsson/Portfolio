@@ -1,11 +1,11 @@
 <template>
-	<Sidebar
-		v-model:open="open"
-	/>
+    <Sidebar
+        v-model:open="open"
+    />
 
-	<Hamburger
-		v-model:open="open"
-	/>
+    <Hamburger
+        v-model:open="open"
+    />
 </template>
 
 
@@ -13,18 +13,18 @@
 const open = ref(false)
 
 function closeOnEscape(event: KeyboardEvent) {
-	if (event.key !== 'Escape') {
-		return
-	}
+    if (event.key !== 'Escape') {
+        return
+    }
 
-	open.value = false
+    open.value = false
 }
 
 onMounted(() => {
-	window.addEventListener('keydown', closeOnEscape)
+    window.addEventListener('keydown', closeOnEscape)
 })
 
-onBeforeMount(() => {
-	window.removeEventListener('keydown', closeOnEscape)
+onBeforeUnmount(() => {
+    window.removeEventListener('keydown', closeOnEscape)
 })
 </script>

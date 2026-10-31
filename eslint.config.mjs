@@ -4,13 +4,6 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 export default withNuxt(
     {ignores: ['.data', 'public']},
     {
-        ignores: ['app/components/ui/*'],
-        rules: {
-            '@typescript-eslint/no-unused-vars': 'on',
-            'vue/require-default-prop': 'off',
-        },
-    },
-    {
         rules: {
             'object-curly-newline': ['error', {
                 'ObjectExpression': {

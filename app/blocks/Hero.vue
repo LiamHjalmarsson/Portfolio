@@ -54,7 +54,6 @@
                             format="webp"
                             quality="80"
                             sizes="50vw lg:45vw xl:360px 2xl:440px"
-                            loading="eager"
                             class="h-full w-full object-cover"
                         />
                     </div>
@@ -71,7 +70,6 @@
                             format="webp"
                             quality="80"
                             sizes="50vw lg:45vw xl:360px 2xl:440px"
-                            loading="eager"
                             fetchpriority="low"
                             class="h-full w-full object-cover"
                             @load="onIncomingImageLoad"

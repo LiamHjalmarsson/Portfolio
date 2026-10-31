@@ -20,9 +20,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const {
-    text,
-} = defineProps<{
+const {text} = defineProps<{
     text: string
 }>()
 

@@ -74,7 +74,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const { data: projects } = await useAsyncData('projects', () =>
-    queryCollection('projects').order('order', 'ASC').all()
+    queryCollection('projects').order('order', 'ASC').all(),
 )
 
 const projectRefs = ref<HTMLDivElement[]>([])

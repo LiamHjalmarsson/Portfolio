@@ -8,11 +8,10 @@ export interface SocialLink {
 
 export interface Link {
 	name: string;
-	to: string;
 	sectionId: string;
 };
 
-export type Size = "large" | "small";
+export type Size = 'large' | 'small';
 
 export type ButtonVariant = 'primary' | 'outline' | 'ghost'
 

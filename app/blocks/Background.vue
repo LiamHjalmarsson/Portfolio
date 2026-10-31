@@ -3,17 +3,17 @@
         id="background"
         class="min-h-screen lg:px-3">
         <div class="rounded-t-4xl bg-black pb-6">
-                <Header
-                    title="Vägen hit"
-                    subtitle="~/vad-jag-har-gjort"
-                    theme="light"
-                    :with-scroll-trigger="true"
-                >
-                    <TextLines
-                        :text="sectionText"
-                        class="font-light uppercase"
-                    />
-                </Header>
+            <Header
+                title="Vägen hit"
+                subtitle="~/vad-jag-har-gjort"
+                theme="light"
+                :with-scroll-trigger="true"
+            >
+                <TextLines
+                    :text="sectionText"
+                    class="font-light uppercase"
+                />
+            </Header>
 
             <div ref="stackRef" class="max-w-[1800px] mx-auto">
                 <BackgroundItem
@@ -21,8 +21,6 @@
                     :key="`${background.id}-${index}`"
                     :background="background"
                     :index="index"
-                    :total="data?.length ?? 0"
-                    :is-first-item="index === 0"
                 />
             </div>
         </div>
@@ -38,7 +36,7 @@ gsap.registerPlugin(ScrollTrigger)
 const { data } = await useAsyncData('background', () =>
     queryCollection('background')
         .order('order', 'ASC')
-        .all()
+        .all(),
 )
 
 const sectionText = `Min resa inom tech började under utbildningen och har

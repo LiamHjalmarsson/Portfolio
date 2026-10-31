@@ -117,14 +117,14 @@ export default defineNuxtConfig({
             repo: 'Portfolio',
             branch: 'master',
             private: false,
-        }
+        },
     },
 
     nitro: {
         prerender: {
             routes: ['/'],
-            crawlLinks: true
-        }
-    }
+            crawlLinks: true,
+        },
+    },
 
 })

@@ -15,7 +15,7 @@ export default defineContentConfig({
                 order: z.number().default(0),
                 image: z.object({
                     src: z.string(),
-                    alt: z.string()
+                    alt: z.string(),
                 }),
                 href: z.url(),
                 githubUrl: z.string().optional(),
@@ -34,7 +34,7 @@ export default defineContentConfig({
                     'backend',
                     'database',
                     'tool',
-                    'other'
+                    'other',
                 ]),
                 order: z.number().default(0),
                 icon: z.string().optional(),
@@ -61,5 +61,5 @@ export default defineContentConfig({
                 })).default([]),
             }),
         }),
-    }
+    },
 })

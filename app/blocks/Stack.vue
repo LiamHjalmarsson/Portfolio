@@ -37,7 +37,7 @@ const { data: technologies } = await useAsyncData('technologies', () =>
     queryCollection('technologies')
         .where('featured', '=', true)
         .order('order', 'ASC')
-        .all()
+        .all(),
 )
 
 const text =
