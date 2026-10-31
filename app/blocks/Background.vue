@@ -33,6 +33,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const stackRef = useTemplateRef('stackRef')
+
 const { data } = await useAsyncData('background', () =>
     queryCollection('background')
         .order('order', 'ASC')
@@ -42,8 +44,6 @@ const { data } = await useAsyncData('background', () =>
 const sectionText = `Min resa inom tech började under utbildningen och har
 sedan vuxit genom projekt, teamarbete och erfarenhet.
 Här är en översikt av min bakgrund från studier till arbete.`
-
-const stackRef = ref<HTMLElement | null>(null)
 
 const TOP_OFFSET = 20
 

@@ -12,7 +12,7 @@
 <script setup lang="ts">
 const open = ref(false)
 
-function closeOnEscape(event: KeyboardEvent) {
+const closeOnEscape = (event: KeyboardEvent) => {
     if (event.key !== 'Escape') {
         return
     }

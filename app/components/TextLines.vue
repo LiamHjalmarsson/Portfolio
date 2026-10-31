@@ -24,9 +24,9 @@ const {text} = defineProps<{
     text: string
 }>()
 
-const containerRef = ref<HTMLDivElement | null>(null)
+const containerRef = useTemplateRef('containerRef')
 
-const lineRefs = ref<HTMLSpanElement[]>([])
+const lineRefs = useTemplateRef('lineRefs')
 
 const textLines = computed(() => text.split('\n').filter(line => line.trim() !== ''))
 

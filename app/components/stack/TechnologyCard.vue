@@ -7,7 +7,6 @@
                 : 'col-span-4 h-40 p-6 sm:col-span-2 md:p-7 lg:h-52 2xl:h-80 max-sm:nth-6:border-r-0 last:border-r-0',
         ]">
         <span
-            ref="iconWrapRef"
             class="font-bold group-hover:text-primary transition duration-300">
             <Icon
                 v-if="technology.icon"

@@ -1,4 +1,3 @@
-
 <template>
     <section
         id="home"
@@ -96,6 +95,18 @@
 import { gsap } from 'gsap'
 import { socials } from '~/data/socials'
 
+const leftCardRef = useTemplateRef('leftCardRef')
+
+const socialsCardRef = useTemplateRef('socialsCardRef')
+
+const rotatingCardRef = useTemplateRef('rotatingCardRef')
+
+const incomingImageRef = useTemplateRef('incomingImageRef')
+
+const currentImageIndex = ref(0)
+
+const incomingImageSrc = ref<string | null>(null)
+
 const heroDescriptionText = `Här utforskar jag kod, design och digitala lösningar.
 Kika runt och hör av dig om du vill bygga något tillsammans,
 eller bara ta en kopp kaffe och prata idéer.`
@@ -106,25 +117,13 @@ const rotatingImageSources = [
     '/images/nemo1.png',
 ]
 
-const leftCardRef = ref<HTMLDivElement | null>(null)
-
-const socialsCardRef = ref<HTMLDivElement | null>(null)
-
-const rotatingCardRef = ref<HTMLDivElement | null>(null)
-
-const incomingImageRef = ref<HTMLDivElement | null>(null)
-
-const currentImageIndex = ref(0)
-
-const incomingImageSrc = ref<string | null>(null)
-
 let introAnimation: gsap.core.Tween
 
 let swapAnimation: gsap.core.Tween
 
 let imageSwapTimeout: ReturnType<typeof setTimeout> | undefined
 
-function scheduleImageSwap() {
+const scheduleImageSwap = () => {
     clearTimeout(imageSwapTimeout)
 
     imageSwapTimeout = setTimeout(() => {
@@ -134,7 +133,7 @@ function scheduleImageSwap() {
     }, 5000)
 }
 
-async function onIncomingImageLoad() {
+const onIncomingImageLoad = async () => {
     await nextTick()
 
     const element = incomingImageRef.value

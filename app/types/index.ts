@@ -6,6 +6,8 @@ export type ButtonVariant = 'primary' | 'outline' | 'ghost'
 
 export type ButtonType = 'button' | 'submit' | 'reset'
 
+export type HeaderTheme = 'light' | 'dark'
+
 export interface Seo {
     title?: string
     description?: string

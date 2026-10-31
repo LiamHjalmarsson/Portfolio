@@ -34,6 +34,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const containerRef = useTemplateRef('containerRef')
+
+const imageRef = useTemplateRef('imageRef')
+
 const aboutPrimaryText = `Jag är baserad i Skåne och hämtar mycket inspiration
 från naturen och stillheten runt omkring.
 Ofta hittar du mig ute på vandring eller med mina två hundar.`
@@ -41,10 +45,6 @@ Ofta hittar du mig ute på vandring eller med mina två hundar.`
 const aboutSecondaryText = `För mig handlar mycket om att vara närvarande i det jag gör.
 Att lyssna, justera och låta erfarenhet forma nästa steg,
 snarare än att skynda vidare.`
-
-const containerRef = ref<HTMLElement | null>(null)
-
-const imageRef = ref<HTMLDivElement | null>(null)
 
 let scaleAnimation: GSAPTimeline
 

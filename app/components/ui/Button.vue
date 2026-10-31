@@ -38,6 +38,8 @@ const {
     type = 'button',
 } = defineProps<Button>()
 
+const contentRef = useTemplateRef('contentRef')
+
 const baseClass = 'inline-flex items-center justify-center font-semibold text-lg transition-colors whitespace-nowrap select-none border-2 px-8 md:px-12 py-4 md:py-6 rounded-full'
 
 const variantClass = computed(() => {
@@ -52,13 +54,11 @@ const variantClass = computed(() => {
     return 'bg-primary-600 border-primary-600 text-white hover:bg-primary-700 active:bg-primary-800'
 })
 
-const contentRef = ref<HTMLSpanElement | null>(null)
-
 let moveX: gsap.QuickToFunc
 
 let moveY: gsap.QuickToFunc
 
-function followPointer(event: PointerEvent) {
+const followPointer = (event: PointerEvent) => {
     const content = contentRef.value
 
     if (!content) {
@@ -72,9 +72,8 @@ function followPointer(event: PointerEvent) {
     moveY((event.clientY - (bounds.top + bounds.height / 2)) / 10)
 }
 
-function resetPosition() {
+const resetPosition = () => {
     moveX(0)
-
     moveY(0)
 }
 

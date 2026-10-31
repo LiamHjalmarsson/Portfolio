@@ -1,5 +1,5 @@
 <template>
-    <footer id="contact" className="flex flex-col justify-between min-h-screen bg-black py-16">
+    <footer id="contact" class="flex flex-col justify-between min-h-screen bg-black py-16">
         <Header
             title="Ide, frågor eller bara säga hej"
             subtitle="~/kontakta-mig"
@@ -24,14 +24,14 @@
 <script lang="ts" setup>
 import gsap from 'gsap'
 
+const buttonsWrapRef = useTemplateRef('buttonsWrapRef')
+
+const mailRef = useTemplateRef('mailRef')
+
+const linkedInRef = useTemplateRef('linkedInRef')
+
 const text = `Tveka inte att höra av dig jag är alltid öppen för ett samtal eller ta en kopp kaffe.
 Oavsett om det gäller samarbete eller något helt annat.`
-
-const buttonsWrapRef = ref<HTMLElement | null>(null)
-
-const mailRef = ref<HTMLElement | null>(null)
-
-const linkedInRef = ref<HTMLElement | null>(null)
 
 let context: gsap.Context | null = null
 

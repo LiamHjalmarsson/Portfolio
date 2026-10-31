@@ -1,4 +1,3 @@
-
 <template>
     <button
         type="button"
@@ -30,15 +29,15 @@ import gsap from 'gsap'
 
 const open = defineModel<boolean>('open', { default: false })
 
+const topRef = useTemplateRef('topRef')
+
+const midRef = useTemplateRef('midRef')
+
+const bottomRef = useTemplateRef('bottomRef')
+
 const toggleMenu = () => {
     open.value = !open.value
 }
-
-const topRef = ref<HTMLSpanElement | null >(null)
-
-const midRef = ref<HTMLSpanElement | null >(null)
-
-const bottomRef = ref<HTMLSpanElement | null >(null)
 
 let animation : GSAPTimeline
 

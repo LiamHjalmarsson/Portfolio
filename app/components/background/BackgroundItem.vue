@@ -113,7 +113,7 @@ defineProps<{
     index: number
 }>()
 
-const listRef = ref<HTMLUListElement | null>(null)
+const listRef = useTemplateRef('listRef')
 
 let animation: GSAPTimeline
 

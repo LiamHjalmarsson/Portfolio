@@ -32,6 +32,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const containerRef = useTemplateRef('containerRef')
+
+const textRef = useTemplateRef('textRef')
+
 const { data: technologies } = await useAsyncData('technologies', () =>
     queryCollection('technologies')
         .where('featured', '=', true)
@@ -50,10 +54,6 @@ const orderedItems = computed(() => {
         ...items.filter(item => item.size === 'sm'),
     ]
 })
-
-const containerRef = ref<HTMLDivElement | null>(null)
-
-const textRef = ref<HTMLParagraphElement | null>(null)
 
 let animation: gsap.core.Timeline | undefined
 

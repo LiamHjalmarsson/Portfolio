@@ -73,15 +73,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const projectRefs = useTemplateRef('projectRefs')
+
+const previewRef = useTemplateRef('previewRef')
+
+const activeProject = shallowRef<Project | null>(null)
+
 const { data: projects } = await useAsyncData('projects', () =>
     queryCollection('projects').order('order', 'ASC').all(),
 )
-
-const projectRefs = ref<HTMLDivElement[]>([])
-
-const previewRef = ref<HTMLDivElement | null>(null)
-
-const activeProject = shallowRef<Project | null>(null)
 
 let revealAnimations: GSAPTimeline[] = []
 
@@ -91,7 +91,7 @@ let previewX: gsap.QuickToFunc
 
 let previewY: gsap.QuickToFunc
 
-function showPreview(project: Project, event: PointerEvent) {
+const showPreview = (project: Project, event: PointerEvent) => {
     if (event.pointerType !== 'mouse') {
         return
     }
@@ -113,7 +113,7 @@ function showPreview(project: Project, event: PointerEvent) {
     })
 }
 
-function movePreview(event: PointerEvent) {
+const movePreview = (event: PointerEvent) => {
     if (event.pointerType !== 'mouse') {
         return
     }
@@ -123,7 +123,7 @@ function movePreview(event: PointerEvent) {
     previewY(event.clientY - 250)
 }
 
-function hidePreview() {
+const hidePreview = () => {
     if (!activeProject.value) {
         return
     }
@@ -154,7 +154,7 @@ onMounted(() => {
         ease: 'power3.out',
     })
 
-    revealAnimations = projectRefs.value.map((project) => {
+    revealAnimations = (projectRefs.value ?? []).map((project) => {
         const animation = gsap.timeline({
             scrollTrigger: {
                 trigger: project,

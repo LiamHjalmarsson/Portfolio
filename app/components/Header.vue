@@ -40,8 +40,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-type HeaderTheme = 'light' | 'dark'
-
 const {
     theme, withScrollTrigger,
 } = defineProps<{
@@ -53,9 +51,9 @@ const {
 
 const slots = useSlots()
 
-const headerRef = ref<HTMLDivElement | null>(null)
+const headerRef = useTemplateRef('headerRef')
 
-const titleRef = ref<HTMLDivElement | null>(null)
+const titleRef = useTemplateRef('titleRef')
 
 const hasDefaultSlotContent = computed(() => {
     const renderedDefaultSlot = slots.default?.() ?? []

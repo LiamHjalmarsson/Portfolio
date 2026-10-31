@@ -28,7 +28,7 @@ export function useSeo(input: Seo = {}): void {
         ogUrl: canonicalUrl,
         ogImage,
 
-        twitterCard: 'summary_lg_image',
+        twitterCard: 'summary_large_image',
         twitterTitle: title,
         twitterDescription: description,
         twitterImage: ogImage,

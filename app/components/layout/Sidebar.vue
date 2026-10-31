@@ -66,17 +66,16 @@ import { socials } from '~/data/socials'
 
 const open = defineModel<boolean>('open', { default: false })
 
-const menuRef = ref<HTMLElement | null>(null)
+const menuRef = useTemplateRef('menuRef')
 
-const linkRefs = ref<HTMLLIElement[]>([])
+const linkRefs = useTemplateRef('linkRefs')
 
-const contactRef = ref<HTMLDivElement | null>(null)
+const contactRef = useTemplateRef('contactRef')
 
 let animation: GSAPTimeline
 
-function scrollToSection(id: string) {
+const scrollToSection = (id: string) => {
     open.value = false
-
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
 
