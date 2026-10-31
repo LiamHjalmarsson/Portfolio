@@ -11,7 +11,7 @@
             <Icon
                 v-if="technology.icon"
                 :name="technology.icon"
-                :size=" technology.size === 'lg' ?  90 : 75" />
+                :size=" technology.size === 'lg' ?  80 : 55" />
         </span>
 
         <span class="absolute bottom-0 left-0 px-6 py-4 text-neutral-800 font-semibold text-sm group-hover:text-primary transition duration-300">

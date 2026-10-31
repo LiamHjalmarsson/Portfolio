@@ -80,7 +80,7 @@
 
         <Header
             title="Liam Hjalmarsson"
-            subtitle="~/Fullstackutvecklare - Skåne"
+            subtitle="~/utvecklare-skåne"
             theme="dark"
             :with-scroll-trigger="false"
         >
