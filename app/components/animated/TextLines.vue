@@ -2,13 +2,12 @@
     <div
         ref="containerRef"
         class="overflow-hidden"
-        :class="wrapperClass"
     >
         <span
             v-for="line in textLines"
             :key="line"
             ref="lineRefs"
-            :class="lineClass"
+            class="block leading-relaxed tracking-wide text-pretty text-base md:text-lg lg:text-2xl 2xl:text-4xl font-medium uppercase"
         >
             {{ line }}
         </span>
@@ -23,12 +22,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 const {
     text,
-    wrapperClass = '',
-    lineClass = 'block leading-relaxed tracking-wide text-pretty text-sm md:text-md lg:text-xl 2xl:text-3xl',
 } = defineProps<{
     text: string
-    wrapperClass?: string
-    lineClass?: string
 }>()
 
 const containerRef = ref<HTMLDivElement | null>(null)

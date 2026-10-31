@@ -6,7 +6,7 @@
     >
         <div
             data-stack-inner
-            class="relative origin-top overflow-hidden rounded-3xl border border-white/10 bg-black text-white shadow"
+            class="relative origin-top overflow-hidden rounded-3xl border border-white/10 bg-black shadow"
         >
             <span
                 class="pointer-events-none absolute -right-3 select-none text-[9rem] font-bold leading-none tracking-tighter text-primary/6 lg:-bottom-6 lg:text-[16rem]"
@@ -15,7 +15,7 @@
                 {{ index + 1 }}
             </span>
 
-            <div class="flex h-14 justify-between items-center gap-x-4 gap-y-2 border-b border-white/10 px-5 py-4 font-mono text-xs md:px-8 lg:px-12">
+            <div class="flex h-14 justify-between items-center gap-x-4 gap-y-2 border-b border-white/10 px-5 py-4 text-xs md:px-8 lg:px-12">
                 <span class="text-primary max-lg:hidden">
                     commit {{ background.code }}
                 </span>
@@ -23,24 +23,24 @@
                 <div>
                     <span
                         v-if="index === 0"
-                        class="text-green-500"
+                        class="text-green-500 mr-2"
                     >
                         (HEAD → nu)
                     </span>
 
-                    <span class="rounded-full border border-white/15 px-2.5 py-0.5 text-white/70">
+                    <Badge>
                         {{ background.type === 'work' ? 'Arbete' : 'utbildning' }}
-                    </span>
+                    </Badge>
                 </div>
             </div>
 
             <div class="relative flex flex-col gap-8 p-5 font-light md:p-8 lg:gap-12 lg:p-12">
                 <div class="flex justify-between gap-5 max-sm:flex-col sm:items-center">
-                    <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl">
+                    <h2 class="text-2xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl text-white">
                         {{ background.title }}
                     </h2>
 
-                    <p class="flex items-center gap-2 text-sm font-medium tracking-widest text-white/80 uppercase md:text-right md:text-base">
+                    <p class="flex items-center gap-2 text-sm font-medium tracking-widest text-white uppercase md:text-right md:text-base">
                         <Icon
                             :name="background.type === 'work'
                                 ? 'mdi:office-building-outline'
@@ -53,7 +53,7 @@
                     </p>
                 </div>
 
-                <p class="text-md text-pretty leading-relaxed tracking-widest text-white/80 md:text-lg lg:text-xl 2xl:text-2xl">
+                <p class="text-md text-pretty leading-relaxed tracking-widest text-neutral-200 md:text-lg lg:text-xl 2xl:text-2xl">
                     {{ background.description }}
                 </p>
 
@@ -74,27 +74,25 @@
                                     />
                                 </span>
 
-                                <h3 class="text-lg font-semibold tracking-wide text-white md:text-xl">
+                                <h3 class="text-lg font-semibold tracking-wide text-neutral-200 md:text-xl">
                                     {{ area.title }}
                                 </h3>
                             </div>
 
                             <div class="flex flex-wrap gap-2">
-                                <span
+                                <Badge
                                     v-for="tech in area.technologies"
                                     :key="tech"
-                                    class="rounded-full border border-white/10 px-3 py-1 font-mono text-xs capitalize text-white/70"
                                 >
                                     {{ tech }}
-                                </span>
+                                </Badge>
 
-                                <span
+                                <Badge
                                     v-for="skill in  area.skills"
                                     :key="skill"
-                                    class="rounded-full border border-white/10 px-3 py-1 font-mono text-xs capitalize text-white/70"
                                 >
                                     {{ skill }}
-                                </span>
+                                </Badge>
                             </div>
                         </div>
                     </li>

@@ -9,12 +9,12 @@
                 title="Om mig"
                 theme="light"
                 :with-scroll-trigger="true">
-                <TextLines :text="aboutPrimaryText" class="font-light uppercase" />
+                <TextLines :text="aboutPrimaryText" />
             </Header>
 
             <div
-                class="flex max-md:flex-col-reverse md:items-center justify-between max-md:space-y-reverse max-md:mt-6 max-md:space-y-12 md:space-x-16 px-3 md:px-6 lg:px-12 pb-16 font-ligt tracking-wide text-white/80">
-                <TextLines :text="aboutSecondaryText" class="font-light uppercase" />
+                class="flex max-md:flex-col-reverse md:items-center justify-between max-md:space-y-reverse max-md:mt-6 max-md:space-y-12 md:space-x-16 px-3 md:px-6 lg:px-12 pb-16">
+                <TextLines :text="aboutSecondaryText" class="text-neutral-200" />
 
                 <div ref="imageRef" class="flex-1 h-140 relative overflow-hidden min-w-80">
                     <NuxtImg

@@ -5,7 +5,7 @@
             subtitle="~/kontakta-mig"
             theme="light"
             :with-scroll-trigger="true">
-            <TextLines :text="text" class="font-light uppercase" />
+            <TextLines :text="text" />
         </Header>
 
         <div class="flex-1 px-3 md:px-6 lg:px-12">

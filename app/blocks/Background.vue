@@ -16,7 +16,7 @@
                 </Header>
 
 
-            <p class="px-3 md:px-6 lg:px-12 font-mono text-xs text-white/80 md:text-sm pb-6">
+            <p class="px-3 md:px-6 lg:px-12 font-mono text-xs text-neutral-300 md:text-sm pb-6">
                 <span class="text-primary-500">$</span>
                 git log --karriär
             </p>

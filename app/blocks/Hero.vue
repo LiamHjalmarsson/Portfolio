@@ -89,7 +89,6 @@
         >
             <TextLines
                 :text="heroDescriptionText"
-                class="font-light uppercase"
             />
         </Header>
     </section>
