@@ -103,15 +103,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import type { Collections } from '@nuxt/content'
 
 gsap.registerPlugin(ScrollTrigger)
 
 defineProps<{
-    background: Collections['background']
+    background: Background
     index: number
 }>()
 

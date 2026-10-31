@@ -1,16 +1,5 @@
 import type { Collections } from '@nuxt/content'
 
-export interface SocialLink {
-	name: string;
-	href: string;
-	icon: string;
-};
-
-export interface Link {
-	name: string;
-	sectionId: string;
-};
-
 export type Size = 'lg' | 'sm';
 
 export type ButtonVariant = 'primary' | 'outline' | 'ghost'
@@ -31,13 +20,19 @@ export interface Button {
     to?: string
 }
 
-export type Category = 'frontend' | 'backend' | 'database' | 'tool'
+export interface SocialLink {
+	name: string;
+	href: string;
+	icon: string;
+};
 
-export type BackgroundType = 'work' | 'education'
+export interface Link {
+	name: string;
+	sectionId: string;
+};
 
 export type Project = Collections['projects']
 
-export interface Service {
-    title: string
-    description: string
-}
+export type Background = Collections['background']
+
+export type Technology = Collections['technologies']

@@ -15,10 +15,10 @@
 
             <div class="w-full overflow-hidden">
                 <div class="grid grid-cols-12">
-                    <StackCard
+                    <TechnologyCard
                         v-for="item in orderedItems"
                         :key="item.id"
-                        :stack="item"
+                        :technology="item"
                     />
                 </div>
             </div>
@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
