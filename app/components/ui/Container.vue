@@ -51,7 +51,7 @@ onMounted(() => {
     })
 
     animation.from(titleRef.value, {
-        opacity: 0,
+        ...(withScrollTrigger ? { opacity: 0 } : {}),
         y: 200,
         duration: 1,
         ease: 'circ.out',

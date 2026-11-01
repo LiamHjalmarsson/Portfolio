@@ -107,6 +107,7 @@ export default defineNuxtConfig({
     gtag: {
         enabled: Boolean(gtagId),
         id: gtagId ?? '',
+        loadingStrategy: 'defer',
     },
 
     studio: {

@@ -34,6 +34,7 @@
 		"@iconify-json/mdi": "^1.2.3",
 		"@iconify-json/simple-icons": "^1.2.101",
 		"@nuxt/eslint": "^1.17.0",
+		"@types/three": "^0.187.0",
 		"eslint": "^10.13.0",
 		"zod": "^4.6.7",
 		"zod-to-json-schema": "^3.25.2"

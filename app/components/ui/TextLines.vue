@@ -47,10 +47,17 @@ const createLineReveal = (lines: Element[]) =>
     })
 
 onMounted(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.set(textElement.value, { autoAlpha: 1 })
+
+        return
+    }
+
     context = gsap.context(() => {
         SplitText.create(textElement.value, {
             type: 'lines',
             mask: 'lines',
+            aria: 'none',
             autoSplit: true,
             onSplit: (split) => {
                 gsap.set(textElement.value, { autoAlpha: 1 })
@@ -62,5 +69,4 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => context?.revert())
-
 </script>
