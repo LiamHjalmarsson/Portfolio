@@ -4,8 +4,8 @@
         ref="textElement"
         class="invisible font-medium leading-relaxed tracking-wide text-pretty max-w-350"
         :class="{
-            'text-base md:text-lg lg:text-2xl 2xl:text-4xl': size === 'sm',
-            'text-lg md:text-xl lg:text-3xl 2xl:text-5xl': size === 'lg',
+            'text-base md:text-lg lg:text-2xl 2xl:text-3xl': size === 'sm',
+            'text-lg md:text-xl lg:text-3xl 2xl:text-4xl': size === 'lg',
             'mr-auto text-left': placement === 'left',
             'mx-auto text-center': placement === 'center',
             'ml-auto text-right': placement === 'right',

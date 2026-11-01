@@ -5,9 +5,9 @@
         rel="noopener noreferrer"
         :aria-label="`Besök Projekt ${project.title}`">
         <div
-            class="lg:border-b px-3 md:px-12 py-6 md:py-12 lg:py-20 relative max-lg:flex max-md:flex-col max-md:space-y-3 max-md:space-x-0 max-lg:space-x-6 max-lg:overflow-hidden group hover:bg-black transition duration-300">
-            <div class="flex max-md:flex-col justify-between items-center relative z-10">
-                <Heading tag="h3" class="group-hover:text-primary duration-300 transition">
+            class="lg:border-b px-3 md:px-12 py-6 md:py-12 lg:py-20 relative max-lg:flex max-lg:flex-col max-md:space-y-3 max-md:space-x-0 max-lg:space-x-6 max-lg:overflow-hidden group hover:bg-black transition duration-300">
+            <div class="flex max-lg:flex-col justify-between items-center relative z-10">
+                <Heading tag="h3" class="group-hover:text-primary duration-300 transition max-lg:mb-3">
                     {{ project.title }}
                 </Heading>
 
