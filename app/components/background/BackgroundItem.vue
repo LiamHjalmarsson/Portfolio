@@ -16,7 +16,7 @@
             </span>
 
             <div class="flex h-14 justify-between items-center gap-x-4 gap-y-2 border-b border-white/10 px-5 py-4 text-xs md:px-8 lg:px-12">
-                <span class="text-primary max-lg:hidden">
+                <span class="text-primary">
                     commit {{ background.code }}
                 </span>
 
