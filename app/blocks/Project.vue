@@ -34,7 +34,6 @@
 
 <script setup lang="ts">
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const sectionRef = useTemplateRef<HTMLElement>('sectionRef')
 
@@ -49,8 +48,6 @@ const { data: projects } = await useAsyncData('projects', () =>
 let scrollContext: gsap.Context | undefined
 
 onMounted(() => {
-    gsap.registerPlugin(ScrollTrigger)
-
     scrollContext = gsap.context(() => {
         projectRefs.value?.forEach((element) => {
             gsap.fromTo(
