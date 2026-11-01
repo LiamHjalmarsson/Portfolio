@@ -78,17 +78,22 @@
             </div>
         </div>
 
-        <Header
-            is-first-header
-            title="Liam Hjalmarsson"
-            subtitle="~/utvecklare-skåne"
-            theme="dark"
-            :with-scroll-trigger="false"
-        >
+
+        <Container>
+            <template #heading>
+                <Eyebrow>utvecklare-skåne</Eyebrow>
+
+                <Heading tag="h1">
+                    Liam Hjalmarsson
+                </Heading>
+            </template>
+
             <TextLines
                 :text="heroDescriptionText"
+                placment="right"
+                class="text-neutral-800"
             />
-        </Header>
+        </Container>
     </section>
 </template>
 

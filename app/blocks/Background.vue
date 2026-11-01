@@ -2,18 +2,21 @@
     <section
         id="background"
         class="min-h-screen lg:px-3">
-        <div class="rounded-t-4xl bg-black pb-6">
-            <Header
-                title="Vägen hit"
-                subtitle="~/vad-jag-har-gjort"
-                theme="light"
-                :with-scroll-trigger="true"
-            >
+        <div class="rounded-t-4xl bg-black text-white pb-6">
+            <Container>
+                <template #heading>
+                    <Eyebrow>vad-jag-har-gjort</Eyebrow>
+
+                    <Heading tag="h2">
+                        Vägen hit
+                    </Heading>
+                </template>
+
                 <TextLines
                     :text="sectionText"
-                    class="font-light uppercase"
+                    class="text-neutral-200"
                 />
-            </Header>
+            </Container>
 
             <div ref="stackRef" class="max-w-[1800px] mx-auto">
                 <BackgroundItem

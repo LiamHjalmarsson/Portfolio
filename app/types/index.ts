@@ -33,6 +33,11 @@ export interface Link {
 	sectionId: string;
 };
 
+export interface Image {
+    src: string
+    alt: string
+}
+
 export type Project = Collections['projects']
 
 export type Background = Collections['background']

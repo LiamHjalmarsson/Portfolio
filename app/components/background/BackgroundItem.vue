@@ -36,7 +36,7 @@
 
             <div class="relative flex flex-col gap-8 p-5 font-light md:p-8 lg:gap-12 lg:p-12">
                 <div class="flex justify-between gap-5 max-sm:flex-col sm:items-center">
-                    <Heading tag="h3" class="text-2xl font-semibold md:text-3xl lg:text-4xl 2xl:text-5xl text-white">
+                    <Heading tag="h3">
                         {{ background.title }}
                     </Heading>
 
@@ -53,9 +53,10 @@
                     </p>
                 </div>
 
-                <p class="text-base text-pretty leading-relaxed tracking-widest text-neutral-200 md:text-lg lg:text-2xl 2xl:text-3xl">
-                    {{ background.description }}
-                </p>
+                <TextLines
+                    :text="background.description"
+                    class="text-neutral-200"
+                />
 
                 <ul
                     ref="listRef"
@@ -74,7 +75,7 @@
                                     />
                                 </span>
 
-                                <Heading tag="h4" class="text-neutral-200 ">
+                                <Heading tag="h4" class="text-neutral-200">
                                     {{ area.title }}
                                 </Heading>
                             </div>

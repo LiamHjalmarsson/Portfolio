@@ -1,12 +1,12 @@
 <template>
-    <footer id="contact" class="flex flex-col justify-between min-h-screen bg-black py-16">
-        <Header
-            title="Ide, frågor eller bara säga hej"
-            subtitle="~/kontakta-mig"
-            theme="light"
-            :with-scroll-trigger="true">
+    <footer id="contact" class="flex flex-col justify-between min-h-screen bg-black text-white py-16">
+        <Container>
+            <template #heading>
+                <Eyebrow>kontakta-mig</Eyebrow>
+                <Heading tag="h2">Ide, frågor eller bara säga hej</Heading>
+            </template>
             <TextLines :text="text" />
-        </Header>
+        </Container>
 
         <div class="flex-1 px-3 md:px-6 lg:px-12">
             <div ref="buttonsWrapRef" class="flex flex-col items-center justify-center space-y-6 lg:space-y-12 pt-12">

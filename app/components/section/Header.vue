@@ -6,16 +6,12 @@
                 class="flex flex-col justify-center gap-3 md:gap-6 pb-6 pt-12 lg:pt-24 lg:gap-12 px-3 md:px-6 lg:px-12 max-w-300"
             >
 
-                <p
-                    class="text-sm lg:text-lg font-medium tracking-[0.5rem] uppercase"
-                    :class="theme === 'dark' ? 'text-neutral-800' : 'text-neutral-50'"
-                >
+                <Eyebrow>
                     {{ subtitle }}
-                </p>
+                </Eyebrow>
 
                 <Heading
                     :tag="isFirstHeader ? 'h1' : 'h2'"
-                    :class="theme === 'dark' ? 'text-black' : 'text-white'"
                 >
                     {{ title }}
                 </Heading>
@@ -25,7 +21,6 @@
         <div
             v-if="hasDefaultSlotContent"
             class="relative px-3 md:px-6 lg:px-12"
-            :class="theme === 'dark' ? 'text-neutral-800' : 'text-neutral-200'"
         >
             <div class="py-3 md:py-8 lg:py-12 text-end">
                 <slot />

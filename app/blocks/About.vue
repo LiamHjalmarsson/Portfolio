@@ -3,14 +3,21 @@
         id="about"
         ref="containerRef"
         class="h-fit lg:px-3">
-        <div class="bg-black rounded-b-4xl">
-            <Header
-                subtitle="~/mer-om-mig"
-                title="Om mig"
-                theme="light"
-                :with-scroll-trigger="true">
-                <TextLines :text="aboutPrimaryText" />
-            </Header>
+        <div class="bg-black rounded-b-4xl text-white">
+            <Container>
+                <template #heading>
+                    <Eyebrow>mer-om-mig</Eyebrow>
+
+                    <Heading tag="h2">
+                        Om mig
+                    </Heading>
+                </template>
+
+                <TextLines
+                    :text="aboutPrimaryText"
+                    class="text-neutral-200"
+                />
+            </Container>
 
             <div
                 class="flex max-md:flex-col-reverse md:items-center justify-between max-md:space-y-reverse max-md:mt-6 mt-12 max-md:space-y-12 md:space-x-16 px-3 md:px-6 lg:px-12 pb-16">
@@ -43,8 +50,7 @@ från naturen och stillheten runt omkring.
 Ofta hittar du mig ute på vandring eller med mina två hundar.`
 
 const aboutSecondaryText = `För mig handlar mycket om att vara närvarande i det jag gör.
-Att lyssna, justera och låta erfarenhet forma nästa steg,
-snarare än att skynda vidare.`
+Att lyssna, justera och låta erfarenhet forma nästa steg,snarare än att skynda vidare.`
 
 let scaleAnimation: GSAPTimeline
 
