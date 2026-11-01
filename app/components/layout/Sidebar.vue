@@ -48,7 +48,6 @@
                         :key="social.name"
                         :to="social.href"
                         target="_blank"
-                        :aria-label="`Gå till sektion ${social.name}`"
                         class="text-xs lg:text-sm leading-loose tracking-widest uppercase transition-colors duration-300 hover:text-white"
                     >
                         {{ social.name }}

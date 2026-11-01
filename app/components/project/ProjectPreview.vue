@@ -18,14 +18,6 @@
 <script setup lang="ts">
 import { gsap } from 'gsap'
 
-const CURSOR_OFFSET_X = 50
-
-const CURSOR_OFFSET_Y = -250
-
-const FADE_IN_DURATION = 0.14
-
-const FADE_OUT_DURATION = 0.12
-
 const previewElement = useTemplateRef<HTMLDivElement>('previewElement')
 
 const activeProject = shallowRef<Project | null>(null)
@@ -37,9 +29,9 @@ let positionY: gsap.QuickToFunc | undefined
 let visibilityTween: gsap.core.Tween | undefined
 
 const getPosition = (event: PointerEvent) => ({
-    x: event.clientX + CURSOR_OFFSET_X,
+    x: event.clientX + 50,
 
-    y: event.clientY + CURSOR_OFFSET_Y,
+    y: event.clientY + -250,
 })
 
 const show = (project: Project, event: PointerEvent) => {

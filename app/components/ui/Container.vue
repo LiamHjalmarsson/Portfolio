@@ -19,3 +19,46 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+import { gsap } from 'gsap'
+
+const { withScrollTrigger = true } = defineProps<{
+    withScrollTrigger?: boolean
+}>()
+
+const headerRef = useTemplateRef('headerRef')
+
+const titleRef = useTemplateRef('titleRef')
+
+let animation: gsap.core.Timeline | undefined
+
+onMounted(() => {
+    animation = gsap.timeline({
+        scrollTrigger: withScrollTrigger
+            ? {
+                trigger: headerRef.value,
+                start: 'top 90%',
+                toggleActions: 'play none none none',
+            }
+            : undefined,
+    })
+
+    animation.from(headerRef.value, {
+        y: '30vh',
+        duration: 1,
+        ease: 'circ.out',
+    })
+
+    animation.from(titleRef.value, {
+        opacity: 0,
+        y: 200,
+        duration: 1,
+        ease: 'circ.out',
+    }, '<0.2')
+})
+
+onBeforeUnmount(() => {
+    animation?.kill()
+})
+</script>

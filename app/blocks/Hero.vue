@@ -79,7 +79,7 @@
         </div>
 
 
-        <Container>
+        <Container :with-scroll-trigger="false">
             <template #heading>
                 <Eyebrow>utvecklare-skåne</Eyebrow>
 

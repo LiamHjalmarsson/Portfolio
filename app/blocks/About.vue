@@ -55,7 +55,7 @@ från naturen och stillheten runt omkring.
 Ofta hittar du mig ute på vandring eller med mina två hundar.`
 
 const aboutSecondaryText = `För mig handlar mycket om att vara närvarande i det jag gör.
-Att lyssna, justera och låta erfarenhet forma nästa steg,snarare än att skynda vidare.`
+Att lyssna, justera och låta erfarenhet forma nästa steg, snarare än att skynda vidare.`
 
 let scaleAnimation: GSAPTimeline
 
