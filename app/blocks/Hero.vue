@@ -90,7 +90,7 @@
 
             <TextLines
                 :text="heroDescriptionText"
-                placment="right"
+                placement="right"
                 class="text-neutral-800"
             />
         </Container>

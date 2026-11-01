@@ -8,6 +8,8 @@ export type ButtonType = 'button' | 'submit' | 'reset'
 
 export type HeaderTheme = 'light' | 'dark'
 
+export type Placement = 'right' | 'center' | 'left'
+
 export interface Seo {
     title?: string
     description?: string

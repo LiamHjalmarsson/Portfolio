@@ -6,7 +6,7 @@
         <div class="flex w-full flex-col items-center justify-between space-y-12 lg:px-12 2xl:space-y-24">
             <TextLines
                 :text="text"
-                size="lg"
+                placement="center"
                 class="max-w-480 text-center text-neutral-800" />
 
 

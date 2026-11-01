@@ -65,7 +65,6 @@ onMounted(() => {
                     scrollTrigger: {
                         trigger: element,
                         start: 'top 85%',
-                        once: true,
                     },
                 },
             )

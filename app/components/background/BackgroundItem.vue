@@ -34,7 +34,7 @@
                 </div>
             </div>
 
-            <div class="relative flex flex-col gap-8 p-5 font-light md:p-8 lg:gap-12 lg:p-12">
+            <div class="relative flex flex-col gap-8 p-5 md:p-8 lg:gap-12 lg:p-12">
                 <div class="flex justify-between gap-5 max-sm:flex-col sm:items-center">
                     <Heading tag="h3">
                         {{ background.title }}
@@ -55,6 +55,8 @@
 
                 <TextLines
                     :text="background.description"
+                    size="sm"
+                    placement="left"
                     class="text-neutral-200"
                 />
 

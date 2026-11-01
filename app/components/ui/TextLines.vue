@@ -2,10 +2,14 @@
     <component
         :is="tag"
         ref="textElement"
-        class="invisible font-medium leading-relaxed tracking-wide text-pretty max-w-200"
-        :class="[
-            size === 'lg' ? 'text-lg md:text-xl lg:text-3xl 2xl:text-5xl' : 'text-base md:text-lg lg:text-2xl 2xl:text-4xl',
-        ]"
+        class="invisible font-medium leading-relaxed tracking-wide text-pretty max-w-350"
+        :class="{
+            'text-base md:text-lg lg:text-2xl 2xl:text-4xl': size === 'sm',
+            'text-lg md:text-xl lg:text-3xl 2xl:text-5xl': size === 'lg',
+            'mr-auto text-left': placement === 'left',
+            'mx-auto text-center': placement === 'center',
+            'ml-auto text-right': placement === 'right',
+        }"
     >
         {{ text }}
     </component>
@@ -16,12 +20,12 @@ import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 
 const {
-    text, tag = 'p', size = 'sm', placment = 'right',
+    text, tag = 'p', size = 'lg', placement = 'right',
 } = defineProps<{
     text: string
     size?: Size
     tag?: string
-    placment?: 'right' | 'center' | 'left'
+    placement?: Placement
 }>()
 
 const textElement = useTemplateRef<HTMLElement>('textElement')
@@ -33,7 +37,6 @@ const createLineReveal = (lines: Element[]) =>
         scrollTrigger: {
             trigger: textElement.value,
             start: 'top 90%',
-            once: true,
         },
     }).from(lines, {
         yPercent: 100,
